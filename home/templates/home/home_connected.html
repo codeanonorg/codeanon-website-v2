@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}layout col-light{% endblock %}
+
+{% block content %}
+  <section class="layout col-light">
+    <main>
+      <article>
+        <header>
+          <h3>{{ self.description|richtext }}</h3>
+        </header>
+        {% for link in self.links.all %}
+          <a href="{{ link.link }}" title="{{ link.name }}">
+            <section class="card">
+              <h3>{{ link.name }}</h3>
+              <p class="marg-left">{{ link.description|richtext }}</p>
+            </section>
+          </a>
+        {% endfor %}
+        {% for block in self.content %}
+          <section class="section">{{ block }}</section>
+        {% endfor %}
+      </article>
+    </main>
+  </section>
+{% endblock content %}
