@@ -1,16 +1,8 @@
 {% extends "base.html" %}
 
 {% block body_class %}layout col-light{% endblock %}
-{% block header %}{% endblock %} {# Suppression de l'header #}
 {% block content %}
   <section class="hero layout col-light" id="top">
-    <nav id="top" class="fade-in-top col-light">
-      {% for link in self.links.all %}
-          <a href="{{ link.link }}" title="{{ link.name }}">
-            {{ link.name }}
-          </a>
-        {% endfor %}
-    </nav>
     <main class="text-center">
       <h1 class="glitch flicker-in margin-top" data-text="CodeAnon">CodeAnon</h1>
       <p class="fade-in-top"><a href="#down"><i class="arrow-down"></i></a></p>

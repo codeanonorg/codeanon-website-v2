@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block body_class %}layout col-light{% endblock %}
+
+{% block content %}
+  <section class="fade-in-top">
+    <main>
+      <form method="post" class="text-center">
+        {% csrf_token %}
+        <label>Username
+          <input type="text" name="username" placeholder="Username">
+        </label>
+        <br/>
+        <label>Prénom
+          <input type="text" name="first_name" placeholder="First Name">
+        </label>
+        <br/>
+        <label>Nom
+          <input type="text" name="last_name" placeholder="Last Name">
+        </label>
+        <br/>
+        <label>Email
+          <input type="email" name="email" placeholder="Email">
+        </label>
+        <br/>
+        <label>Mot de passe
+          <input type="password" name="password1" placeholder="Password">
+        </label>
+        <br/>
+        <label>Confirmez le mot de passe
+          <input type="password" name="password2" placeholder="Confirm Password">
+        </label>
+        <br/>
+        {% comment %}<br/>
+        <input type="text" name="registerCodakey" placeholder="CodaKey">
+        <br/>{% endcomment %}
+        {% if form.errors %}
+          <div class="error-msg">
+            {% for error in form.errors %}
+              <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <button type="submit" class="col-light">Register</button>
+      </form>
+    </main>
+  </section>
+{% endblock %}

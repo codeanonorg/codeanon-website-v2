@@ -1,12 +1,24 @@
-<nav id="top">
-    <a href="/home">
-        <img src="/logo.svg" alt="/home" height="87px" width="100px" />
-    </a>
-    <!-- Logout link -->
-    <a href="/logout" class="underline">/logout</a>
-    <!-- Profile link -->
-    <a href="/profile" class="underline">/profile</a>
-</nav>
-<header>
-    <h1>[<span>{{user.username}}</span>@CodeAnon ~]$</h1>
+{% load static %}
+{% url "login" as login_url %}
+{% url "register" as register_url %}
+
+<header class="layout col-light">
+  {% if request.user.is_authenticated %}
+    <nav id="top">
+      <a href="/home">
+        <img src="{% static "img/logo.svg" %}" alt="/home" height="87px" width="100px"/>
+      </a>
+      <!-- Logout link -->
+      <a href="{% url "logout" %}" class="underline">/logout</a>
+      <!-- Profile link -->
+      <a href="{% url "logout" %}" class="underline">/profile</a>
+      <h6>[<span>{{ user.username }}</span>@CodeAnon ~]$</h6>
+    </nav>
+  {% else %}
+    <nav id="top" class="fade-in-top col-light">
+      <a href="{% url "login" %}"{% if request.path == login_url %} class="border-bottom"{% endif %}>Login</a>
+      <a href="/"{% if request.path == "/" %} class="border-bottom"{% endif %}>Accueil</a>
+      <a href="{% url "register" %}"{% if request.path == register_url %} class="border-bottom"{% endif %}>Register</a>
+    </nav>
+  {% endif %}
 </header>

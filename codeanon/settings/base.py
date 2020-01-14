@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from django.urls import reverse_lazy
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -141,10 +143,13 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-
+LOGIN_URL = reverse_lazy("login")
+LOGOUT_URL = reverse_lazy("logout")
+LOGIN_REDIRECT_URL = LOGOUT_REDIRECT_URL = "/"
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "codeanon"
+WAGTAIL_SITE_NAME = "CodeAnon"
+WAGTAIL_FRONTEND_LOGIN_TEMPLATE = LOGIN_URL
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
