@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block body_class %}layout col-light{% endblock %}
+
+{% block content %}
+  <section>
+    <main>
+      <form method="post" class="text-center">
+        {% csrf_token %}
+        <label>Username
+          <input type="text" name="username" placeholder="Username"/>
+        </label>
+        <br/>
+        <label>Password
+          <input type="password" name="password" placeholder="Password"/>
+        </label>
+        <br/>
+        {% if error %}
+          <div class="error-msg">{{ error }}</div>
+        {% endif %}
+        <br/>
+        <button type="submit">Login</button>
+        {% if form.errors %}
+          <div class="error-msg">
+            {% for erorr in form.errors %}
+              <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </form>
+    </main>
+  </section>
+{% endblock %}
