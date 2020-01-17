@@ -1,0 +1,393 @@
+// Overrides
+@import "variables";
+@import "bulma/sass/utilities/all";
+@import "glitch";
+
+.box {
+  border-style: solid;
+  border-width: 1px 1px $thickness 1px;
+  border-color: $border;
+}
+
+.button {
+  height: 2.648em;
+}
+
+.button {
+  transition: all 300ms ease;
+  border-style: solid;
+  border-width: 1px 1px $thickness 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  &.is-hovered,
+  &:hover {
+    border-bottom-width: $thickness - 1;
+  }
+
+  &.is-active,
+  &.is-focused,
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      border-color: darken($color, 5);
+
+      &.is-hovered,
+      &:hover {
+        border-color: darken($color, 10) !important;
+      }
+
+      &.is-active,
+      &.is-focused,
+      &:active,
+      &:focus {
+        border-color: darken($color, 10);
+        box-shadow: $input-focus-box-shadow-size rgba($color, 0.25);
+      }
+    }
+  }
+}
+
+.input,
+.textarea {
+  box-shadow: inset 0 0.125em 0 rgba($black, 0.075);
+
+  &.is-active,
+  &.is-focused,
+  &:active,
+  &:focus {
+    box-shadow: inset 0 0.125em 0 rgba($black, 0.075),
+    $input-focus-box-shadow-size $input-focus-box-shadow-color;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      &.is-active,
+      &.is-focused,
+      &:active,
+      &:focus {
+        border-color: darken($color, 10);
+        box-shadow: inset 0 0.125em 0 rgba($black, 0.075),
+        $input-focus-box-shadow-size rgba($color, 0.25);
+      }
+    }
+  }
+}
+
+.select:after {
+  margin-top: -0.575em;
+}
+
+.select select {
+  border-width: 1px 1px $thickness 1px;
+
+  &:not([multiple]) {
+    height: calc(2.25em + #{$thickness});
+  }
+}
+
+.field.has-addons {
+  .control .select select {
+    height: 2.25em;
+  }
+}
+
+.file {
+  .file-cta,
+  .file-name {
+    border-width: 1px 1px $thickness 1px;
+    position: unset;
+  }
+
+  &.has-name .file-name {
+    border-left-width: 0;
+  }
+
+  &.is-boxed.has-name .file-name {
+    border-width: 1px 1px $thickness 1px;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      .file-cta {
+        border-color: darken($color, 5);
+      }
+
+      &.is-hovered,
+      &:hover {
+        .file-cta {
+          border-color: darken($color, 10);
+        }
+      }
+    }
+  }
+}
+
+.notification {
+  border-style: solid;
+  border-width: 1px 1px $thickness 1px;
+  border-color: $border;
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+
+    &.is-#{$name} {
+      border-color: darken($color, 5);
+    }
+  }
+}
+
+.progress {
+  border-radius: $radius-large;
+}
+
+.card {
+  box-shadow: none;
+  border-style: solid;
+  border-width: 1px 1px $thickness 1px;
+  border-color: $border;
+  background-color: rgba($grey-lighter, 0.075);
+  border-radius: $radius;
+
+  .card-image {
+    img {
+      border-radius: $radius $radius 0 0;
+    }
+  }
+
+  .card-header {
+    box-shadow: none;
+    border-bottom: 1px solid $grey-lighter;
+    border-radius: $radius $radius 0 0;
+  }
+}
+
+.message {
+  .message-body {
+    border-style: solid;
+    border-width: 1px 1px $thickness 1px;
+  }
+}
+
+.hero {
+  .navbar {
+    border: none;
+    box-shadow: 0 $thickness 0 $border;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      .navbar {
+        box-shadow: 0 $thickness 0 darken($color, 5);
+      }
+    }
+  }
+  @include touch {
+    .navbar-menu {
+      box-shadow: none;
+    }
+  }
+}
+
+.navbar {
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      border-color: darken($color, 5);
+    }
+  }
+
+  .navbar-dropdown {
+    box-shadow: $navbar-dropdown-boxed-shadow;
+    top: 101%;
+  }
+}
+
+.pagination-link,
+.pagination-next,
+.pagination-previous {
+  border-width: 1px 1px $thickness 1px;
+}
+
+.tabs {
+  &.is-boxed li.is-active a {
+    border-top-width: $thickness;
+  }
+
+  &.tabs.is-toggle li.is-active a {
+    box-shadow: inset 0 -#{$thickness} 0 darken($link, 10);
+    border-color: darken($link, 10);
+  }
+}
+
+table {
+  margin: 1rem 0;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: center;
+
+  box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.514);
+}
+
+.arrow-down {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(45deg) !important;
+  -webkit-transform: rotate(45deg) !important;
+}
+
+.flicker-in {
+  animation: flicker-in 2.5s linear both
+}
+
+@keyframes flicker-in {
+  0% {
+    opacity: 0
+  }
+  10% {
+    opacity: 0
+  }
+  10.1% {
+    opacity: 1
+  }
+  10.2% {
+    opacity: 0
+  }
+  20% {
+    opacity: 0
+  }
+  20.1% {
+    opacity: 1
+  }
+  20.6% {
+    opacity: 0
+  }
+  30% {
+    opacity: 0
+  }
+  30.1% {
+    opacity: 1
+  }
+  30.5% {
+    opacity: 1
+  }
+  30.6% {
+    opacity: 0
+  }
+  45% {
+    opacity: 0
+  }
+  45.1% {
+    opacity: 1
+  }
+  50% {
+    opacity: 1
+  }
+  55% {
+    opacity: 1
+  }
+  55.1% {
+    opacity: 0
+  }
+  57% {
+    opacity: 0
+  }
+  57.1% {
+    opacity: 1
+  }
+  60% {
+    opacity: 1
+  }
+  60.1% {
+    opacity: 0
+  }
+  65% {
+    opacity: 0
+  }
+  65.1% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  75.1% {
+    opacity: 0
+  }
+  77% {
+    opacity: 0
+  }
+  77.1% {
+    opacity: 1
+  }
+  85% {
+    opacity: 1
+  }
+  85.1% {
+    opacity: 0
+  }
+  86% {
+    opacity: 0
+  }
+  86.1% {
+    opacity: 1
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.fade-in-top {
+  -webkit-animation: fade-in-top 1.2s cubic-bezier(.39, .575, .565, 1) both;
+  animation: fade-in-top 1.2s cubic-bezier(.39, .575, .565, 1) both
+}
+
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+.navbar-brand img.logo {
+
+}

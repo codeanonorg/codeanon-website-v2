@@ -1,0 +1,30 @@
+////////////////////////////////////////////////
+// LUMEN
+////////////////////////////////////////////////
+
+$orange: #b55400;
+$green: #28b62c;
+$blue: #5bb7db;
+$red: #ff4136;
+
+$primary: $orange !default;
+
+$info-invert: #fff;
+
+$family-primary: 'Courier New', Courier, monospace;
+$code-family: $family-primary;
+
+$thickness: 4px;
+
+$pagination-current-border: darken($primary, 5);
+
+$navbar-item-active-color: $primary;
+
+$dropdown-content-shadow: 0 0 0 1px #dbdbdb, 0 #{$thickness} 0 1px #dbdbdb;
+
+$navbar-dropdown-boxed-shadow: $dropdown-content-shadow;
+
+$box-shadow: none;
+
+$scheme-main: #222831;
+$text: white;

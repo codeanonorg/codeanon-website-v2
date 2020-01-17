@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body_class %}layout col-light{% endblock %}
+
+{% block content %}
+  <section class="fade-in-top">
+    <main class="form-container">
+      {% crispy form %}
+    </main>
+  </section>
+{% endblock %}

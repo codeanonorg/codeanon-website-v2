@@ -2,15 +2,17 @@
 
 {% block body_class %}layout col-light{% endblock %}
 {% block content %}
-  <section class="hero layout col-light" id="top">
-    <main class="text-center">
-      <h1 class="glitch flicker-in margin-top" data-text="CodeAnon">CodeAnon</h1>
-      <p class="fade-in-top"><a href="#down"><i class="arrow-down"></i></a></p>
+  <section class="hero is-fullscreen" id="top">
+    <main class="section">
+      <div class="container">
+        <h1 class="glitch flicker-in has-text-centered" data-text="CodeAnon">CodeAnon</h1>
+        <p class="fade-in-top"><a href="#down"><i class="arrow-down"></i></a></p>
+      </div>
     </main>
   </section>
-  <section class="hero col-black back-light" id="down">
+  <section id="down" class="section">
     {% for block in self.content %}
-      <section class="layout">{{ block }}</section>
+      <div class="container">{{ block }}</div>
     {% endfor %}
   </section>
 {% endblock %}

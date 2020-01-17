@@ -3,22 +3,38 @@
 {% url "register" as register_url %}
 
 <header class="layout col-light">
-  {% if request.user.is_authenticated %}
-    <nav id="top">
-      <a href="/home">
-        <img src="{% static "img/logo.svg" %}" alt="/home" height="87px" width="100px"/>
+  <nav class="navbar">
+    <div href="/" class="navbar-brand">
+      <a href="/" class="navbar-item">
+        <img src="{% static "img/logo.svg" %}" alt="CodeAnon"/>
       </a>
-      <!-- Logout link -->
-      <a href="{% url "logout" %}" class="underline">/logout</a>
-      <!-- Profile link -->
-      <a href="{% url "logout" %}" class="underline">/profile</a>
-      <h6>[<span>{{ user.username }}</span>@CodeAnon ~]$</h6>
-    </nav>
-  {% else %}
-    <nav id="top" class="fade-in-top col-light">
-      <a href="{% url "login" %}"{% if request.path == login_url %} class="border-bottom"{% endif %}>Login</a>
-      <a href="/"{% if request.path == "/" %} class="border-bottom"{% endif %}>Accueil</a>
-      <a href="{% url "register" %}"{% if request.path == register_url %} class="border-bottom"{% endif %}>Register</a>
-    </nav>
-  {% endif %}
+      <div class="navbar-burger">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+           data-target="main-navbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <div class="level">
+        {% if user.is_authenticated %}
+          <div class="level-left">
+            <div class="level-item"><a href="{% url "logout" %}" class="underline">/logout</a></div>
+            <div class="level-item"><a href="{% url "logout" %}" class="underline">/profile</a></div>
+          </div>
+          <div class="level-right">
+            <div class="level-item"><span>{{ user.username }}</span>@CodeAnon {{ request.path }}]$</div>
+          </div>
+        {% else %}
+          <div class="navbar-item"><a href="{% url "login" %}"{% if request.path == login_url %}
+                                      class="border-bottom"{% endif %}>Login</a></div>
+          <div class="navbar-item"><a href="/">Home</a></div>
+          <div class="navbar-item"><a href="{% url "register" %}"{% if request.path == register_url %}
+                                      class="border-bottom"{% endif %}>Register</a></div>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
 </header>

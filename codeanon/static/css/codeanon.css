@@ -104,8 +104,6 @@ span {
     color: #b55400;
 }
 
-
-
 table {
     margin: 1rem 0;
     width: 100%;
@@ -285,12 +283,16 @@ textarea[type=contenu] {
 
 /*** login / home / register ***/
 
-.error-msg {
+.alert-block {
     background: #b55400;
     margin: 1rem auto 0 auto;
     width: 350px;
     border-radius: 0.6rem;
-    box-shadow: 8px 10px 5px 0px rgba(0,0,0,0.37);
+    box-shadow: 8px 10px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+.alert-block ul {
+    list-style: none;
 }
 
 .border-bottom{
@@ -318,7 +320,7 @@ textarea[type=contenu] {
 .glitch {
     color: white;
     font-size: 4rem;
-    text-transform: upercase;
+    /*text-transform: uppercase;*/
     position: relative;
     display: inline-block;
 }
@@ -406,7 +408,26 @@ textarea[type=contenu] {
 
     color: #000;
 }
-.ban-button:hover{
+
+.ban-button:hover {
     background: #f8ee5faf;
     border-radius: .5rem;
+}
+
+/* Forms */
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+}
+
+.controls .help-block {
+    font-size: small;
+    color: lightgray;
+}
+
+.controls ul {
+    font-size: small;
+    color: orange;
 }
