@@ -11,6 +11,7 @@ django-compressor = "*"
 django-sass-processor = "*"
 libsass = "*"
 django-crispy-bulma = ">=0.2,<0.3"
+gunicorn = "*"
 
 [dev-packages]
 django-debug-toolbar = ">=2.1,<2.2"

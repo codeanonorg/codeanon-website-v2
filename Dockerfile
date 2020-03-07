@@ -1,27 +1,55 @@
 # Use an official Python runtime as a parent image
-FROM python:3.7
-LABEL maintainer="hello@wagtail.io"
+ARG ENV=production
+FROM python:3.8-alpine
+LABEL maintainer="solarliner@gmail.com"
+
+# TODO: Add secret management to Dockerfile
 
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_ENV dev
-
-COPY ./requirements.txt /code/requirements.txt
-RUN pip install --upgrade pip
-# Install any needed packages specified in requirements.txt
-RUN pip install -r /code/requirements.txt
-RUN pip install gunicorn
-
-# Copy the current directory contents into the container at /code/
-COPY . /code/
+ARG ENV
+ENV DJANGO_ENV ${ENV}
+ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
 # Set the working directory to /code/
 WORKDIR /code/
 
-RUN python manage.py migrate
+# System dependencies
+RUN apk --no-cache add python3 \
+                       build-base \
+                       python3-dev \
+                       # wget dependency
+                       openssl \
+                       # dev dependencies
+                       git \
+                       bash \
+                       sudo \
+                       py3-pip \
+                       # Pillow dependencies
+                       jpeg-dev \
+                       zlib-dev \
+                       freetype-dev \
+                       lcms2-dev \
+                       openjpeg-dev \
+                       tiff-dev \
+                       tk-dev \
+                       tcl-dev \
+                       harfbuzz-dev \
+                       fribidi-dev
+
+RUN pip install --upgrade pip pipenv
+# Install any needed packages specified in requirements.txt
+COPY ./Pipfile* /code/
+RUN pipenv install --deploy --system
+
+# Copy the current directory contents into the container at /code/
+COPY . /code/
+
+
+RUN python manage.py migrate && python manage.py collectstatic
 
 RUN useradd wagtail
 RUN chown -R wagtail /code
 USER wagtail
 
-EXPOSE 8000
-CMD exec gunicorn codeanon.wsgi:application --bind 0.0.0.0:8000 --workers 3
+EXPOSE 80
+CMD exec gunicorn codeanon.wsgi:application --bind 0.0.0.0:80 --workers 3
