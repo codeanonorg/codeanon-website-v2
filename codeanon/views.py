@@ -1,5 +1,5 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Button
+from crispy_forms.layout import Layout, Field, HTML
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.views.generic import FormView
@@ -24,7 +24,7 @@ class LoginView(auth_views.LoginView):
         form.helper.layout = Layout(
             Field("username", placeholder="Username"),
             Field("password", placeholder="Password"),
-            Button("submit", "Login", type="submit", css_class="col-light"),
+            HTML('<button class="btn btn-primary" type="submit">Login</button>'),
         )
 
         return form

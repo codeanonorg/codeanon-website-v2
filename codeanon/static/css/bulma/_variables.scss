@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////
 // LUMEN
 ////////////////////////////////////////////////
+@import "bulma/sass/utilities/functions";
 
 $orange: #b55400;
 $green: #28b62c;
@@ -11,7 +12,7 @@ $primary: $orange !default;
 
 $info-invert: #fff;
 
-$family-primary: 'Courier New', Courier, monospace;
+$family-primary: 'Space Mono', 'Courier New', Courier, monospace;
 $code-family: $family-primary;
 
 $thickness: 4px;
@@ -27,4 +28,11 @@ $navbar-dropdown-boxed-shadow: $dropdown-content-shadow;
 $box-shadow: none;
 
 $scheme-main: #222831;
+$scheme-main-bis: darken($scheme-main, 5);
+$scheme-invert: findColorInvert($scheme-main);
+$scheme-invert-bis: findColorInvert($scheme-main-bis);
 $text: white;
+$text-strong: darken($text, 10);
+$text-invert: findColorInvert($text);
+$link: $orange;
+$link-invert: findColorInvert($orange);

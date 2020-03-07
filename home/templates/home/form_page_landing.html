@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}layout col-light{% endblock %}
+{% block content %}
+  <section class="hero is-bold" id="top">
+    <main class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ page.title }}</h1>
+        <h2 class="subtitle">Message envoyé</h2>
+      </div>
+    </main>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="content">{{ page.confirmation_text | richtext }}</div>
+    </div>
+  </section>
+{% endblock %}

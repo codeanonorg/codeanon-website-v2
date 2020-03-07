@@ -210,5 +210,10 @@ dmypy.json
 !.vscode/extensions.json
 *.code-workspace
 
+# Server-generated assets
 /codeanon/.static/
 /codeanon/.media/
+
+# Node.js / Yarn
+/node_modules
+/yarn.lock

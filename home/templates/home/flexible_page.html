@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body_class %}layout col-light{% endblock %}
+{% block content %}
+  <section class="hero is-bold" id="top">
+    <main class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ page.title }}</h1>
+        <p class="subtitle">{{ page.subtitle }}</p>
+      </div>
+    </main>
+  </section>
+  <section class="section">
+    {% for block in self.content %}
+      <div class="container content">{{ block }}</div>
+    {% endfor %}
+  </section>
+{% endblock %}

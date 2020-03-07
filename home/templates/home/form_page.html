@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}layout col-light{% endblock %}
+{% block content %}
+  <section class="hero is-bold" id="top">
+    <main class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ page.title }}</h1>
+      </div>
+    </main>
+  </section>
+  <section class="section">
+    <form action="{% pageurl page %}" method="POST">
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger" role="alert">
+          {% for error in form.non_field_errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+      {{ form.as_ul }}
+      <input type="submit" value="Envoyer"/>
+    </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "name": "codeanon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SolarLiner/codeanon-website-v2.git",
+  "author": "Nathan Graule <solarliner@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.8.0",
+    "node-sass": "^4.13.1"
+  }
+}

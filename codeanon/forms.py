@@ -31,9 +31,11 @@ class RegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_class = "layout col-light"
+        self.helper.form_class = "layout col-light columns"
         self.helper.layout = Layout(
             Field("username", placeholder="Nom d'utilisateur"),
+            Field("first_name", placeholder="Prénom", css_class="column is-half"),
+            Field("last_name", placeholder="Nom", css_class="column is-half"),
             "first_name",
             "last_name",
             "email",
