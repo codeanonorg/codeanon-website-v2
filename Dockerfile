@@ -10,6 +10,7 @@ ENV PYTHONUNBUFFERED 1
 ARG ENV
 ENV DJANGO_ENV ${ENV}
 ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
+
 # Set the working directory to /code/
 WORKDIR /code/
 
@@ -45,9 +46,13 @@ RUN pipenv install --deploy --system
 COPY . /code/
 
 
-RUN python manage.py migrate && python manage.py collectstatic
+RUN export SECRET_KEY=ABCdefGHIjklMNOpqrSTUvwxYZ1234567890 \
+	&& echo $DJANGO_SETTINGS_MODULE \
+	&& python manage.py migrate \
+	&& python manage.py collectstatic --no-input \
+	&& unset SECRET_KEY
 
-RUN useradd wagtail
+RUN adduser -S wagtail
 RUN chown -R wagtail /code
 USER wagtail
 
