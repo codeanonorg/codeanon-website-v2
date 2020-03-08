@@ -6,23 +6,10 @@ COPY ./package.json /code
 
 RUN yarn --frozen-lockfile
 
-ARG ENV=production
-FROM python:3.8-alpine as runner
-LABEL maintainer="solarliner@gmail.com"
-
-# Set environment varibles
-ENV PYTHONUNBUFFERED 1
-ARG ENV=dev
-ARG DATABASE_URL=sqlite:///db.sqlite3
-ENV DJANGO_ENV ${ENV}
-ENV DATABASE_URL ${DATABASE_URL}
-ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
-
-# Set the working directory to /code/
+FROM python:3.8-alpine as builder
 WORKDIR /code/
 
-# System dependencies
-RUN apk --no-cache add python3 \
+RUN apk update && apk --no-cache add python3 \
                        build-base \
                        python3-dev \
                        # wget dependency
@@ -46,27 +33,31 @@ RUN apk --no-cache add python3 \
                        fribidi-dev \
                        # Postgres dependencies
                        postgresql-dev
-
-RUN pip install --upgrade pip virtualenv poetry
 # Install any needed packages specified in requirements.txt
-COPY ./pyproject.toml /code/
-COPY ./poetry.lock /code/
-RUN virtualenv /code/.venv && . /code/.venv/bin/activate && poetry install
+COPY . /code/
+RUN pip install poetry
+RUN poetry export -f requirements.txt > requirements.txt
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /wheels -r requirements.txt
 
-# Copy the current directory contents into the container at /code/
+ARG ENV=production
+FROM python:3.8-alpine as runner
+LABEL maintainer="solarliner@gmail.com"
+
+# Set environment varibles
+ENV PYTHONUNBUFFERED 1
+ARG ENV=dev
+ARG DATABASE_URL=sqlite:///db.sqlite3
+ENV DJANGO_ENV ${ENV}
+ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
+
 COPY . /code/
 COPY --from=node /code/node_modules /code/node_modules
+COPY --from=builder /wheels /wheels
+COPY --from=builder /code/requirements.txt /code
+RUN pip install --no-cache /wheels/*
 
-
-RUN export SECRET_KEY=ABCdefGHIjklMNOpqrSTUvwxYZ1234567890 \
-	&& . /code/.venv/bin/activate \
-	&& python manage.py migrate \
-	&& python manage.py collectstatic --no-input \
-	&& unset SECRET_KEY
-
-RUN adduser -S wagtail
-RUN chown -R wagtail /code
+RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
-EXPOSE 80
-CMD exec gunicorn codeanon.wsgi:application --bind 0.0.0.0:80 --workers 3
+EXPOSE 8000
+CMD ["./docker_entry.sh", "gunicorn", "codeanon.server.wsgi:application", "--workers=3", "--bind=0.0.0.0:8000"]

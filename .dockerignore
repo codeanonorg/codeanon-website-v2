@@ -214,3 +214,10 @@ fabric.properties
 
 /codeanon/.static
 /codeanon/.media
+
+### Useless to Docker
+
+.git
+/.dockerignore
+/Dockerfile
+/docker-compose.yml
