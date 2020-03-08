@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  web:
+    ports:
+      - ${PORT:-8080}:80
+    build:
+      context: .
+      args:
+        DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
+        ENV: ${ENV:-dev}
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?Please set SECRET_KEY in environment}
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: codeanon
+      POSTGRES_PASSWORD: codeanon
+      POSTGRES_DB: codeanon
