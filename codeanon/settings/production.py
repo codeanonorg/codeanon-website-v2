@@ -7,7 +7,7 @@ def hasallattr(obj, *attrs):
 
 DEBUG = False
 
-SECRET_URL = os.getenv("SECRET_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 if hasallattr(os.environ, "EMAIL_HOST", "EMAIL_PORT", "EMAIL_USER", "EMAIL_PASSWORD"):
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
