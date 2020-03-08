@@ -1,9 +1,14 @@
-# Use an official Python runtime as a parent image
-ARG ENV=production
-FROM python:3.8-alpine
-LABEL maintainer="solarliner@gmail.com"
+FROM node:alpine as node
 
-# TODO: Add secret management to Dockerfile
+WORKDIR /code/
+COPY ./yarn.lock /code
+COPY ./package.json /code
+
+RUN yarn --frozen-lockfile
+
+ARG ENV=production
+FROM python:3.8-alpine as runner
+LABEL maintainer="solarliner@gmail.com"
 
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
@@ -20,6 +25,7 @@ RUN apk --no-cache add python3 \
                        python3-dev \
                        # wget dependency
                        openssl \
+                       openssl-dev \
                        # dev dependencies
                        git \
                        bash \
@@ -37,17 +43,19 @@ RUN apk --no-cache add python3 \
                        harfbuzz-dev \
                        fribidi-dev
 
-RUN pip install --upgrade pip pipenv
+RUN pip install --upgrade pip virtualenv poetry
 # Install any needed packages specified in requirements.txt
-COPY ./Pipfile* /code/
-RUN pipenv install --deploy --system
+COPY ./pyproject.toml /code/
+COPY ./poetry.lock /code/
+RUN virtualenv /code/.venv && . /code/.venv/bin/activate && poetry install
 
 # Copy the current directory contents into the container at /code/
 COPY . /code/
+COPY --from=node /code/node_modules /code/node_modules
 
 
 RUN export SECRET_KEY=ABCdefGHIjklMNOpqrSTUvwxYZ1234567890 \
-	&& echo $DJANGO_SETTINGS_MODULE \
+	&& . /code/.venv/bin/activate \
 	&& python manage.py migrate \
 	&& python manage.py collectstatic --no-input \
 	&& unset SECRET_KEY
