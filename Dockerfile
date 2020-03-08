@@ -13,7 +13,9 @@ LABEL maintainer="solarliner@gmail.com"
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
 ARG ENV
+ARG DATABASE_URL
 ENV DJANGO_ENV ${ENV}
+ENV DATABASE_URL ${DATABASE_URL}
 ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
 
 # Set the working directory to /code/
