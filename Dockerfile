@@ -12,8 +12,8 @@ LABEL maintainer="solarliner@gmail.com"
 
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
-ARG ENV
-ARG DATABASE_URL
+ARG ENV=dev
+ARG DATABASE_URL=sqlite:///db.sqlite3
 ENV DJANGO_ENV ${ENV}
 ENV DATABASE_URL ${DATABASE_URL}
 ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
@@ -43,7 +43,9 @@ RUN apk --no-cache add python3 \
                        tk-dev \
                        tcl-dev \
                        harfbuzz-dev \
-                       fribidi-dev
+                       fribidi-dev \
+                       # Postgres dependencies
+                       postgresql-dev
 
 RUN pip install --upgrade pip virtualenv poetry
 # Install any needed packages specified in requirements.txt
