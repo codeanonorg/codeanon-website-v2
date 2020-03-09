@@ -216,4 +216,3 @@ dmypy.json
 
 # Node.js / Yarn
 /node_modules
-/yarn.lock
