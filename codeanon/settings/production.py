@@ -5,9 +5,16 @@ def hasallattr(obj, *attrs):
     return all(hasattr(obj, a) for a in attrs)
 
 
+ALLOWED_HOSTS = [os.getenv("DJANGO_HOST", "127.0.0.1")]
+
 DEBUG = False
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+insert_idx = MIDDLEWARE.index("django.middleware.security.SecurityMiddleware")
+MIDDLEWARE.insert(insert_idx + 1, "whitenoise.middleware.WhiteNoiseMiddleware")
 
 if hasallattr(os.environ, "EMAIL_HOST", "EMAIL_PORT", "EMAIL_USER", "EMAIL_PASSWORD"):
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

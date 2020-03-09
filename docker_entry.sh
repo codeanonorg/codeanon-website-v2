@@ -12,6 +12,7 @@ fi
 
 [ "x$SQL_DO_FLUSH" = "x1" ] && python manage.py flush --no-input
 python manage.py migrate
-python manage.py collectstatic --noinput --clear
+python manage.py compilescss
+python manage.py collectstatic --noinput --clear --ignore="*.sass"
 
 exec "$@"

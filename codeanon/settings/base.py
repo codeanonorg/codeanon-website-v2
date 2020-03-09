@@ -88,7 +88,7 @@ WSGI_APPLICATION = "codeanon.wsgi.application"
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.parse(os.getenv("DATABASE_URL", "sqlite:///db.sqlite"))
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL", "sqlite:///db.sqlite3"))
 }
 
 # Password validation
@@ -169,3 +169,15 @@ WAGTAIL_FRONTEND_LOGIN_TEMPLATE = LOGIN_URL
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "http://codeanon.org"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler",},},
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+        },
+    },
+}

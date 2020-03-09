@@ -3,23 +3,28 @@ version: '3.1'
 services:
   web:
     ports:
-      - ${PORT:-8080}:80
+      - ${PORT:-8080}:8000
     build:
       context: .
       args:
         DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
         ENV: ${ENV:-dev}
-    command: "gunicorn codeanon.wsgi:application --bind 0.0.0.0:80 --workers 3"
     environment:
-      SECRET_KEY: ${SECRET_KEY:?Please set SECRET_KEY in environment}
+      SECRET_KEY: ${SECRET_KEY:?Django secret key}
+      DJANGO_HOST: ${DJANGO_HOST:?Server public host address}
       SQL_HOST: db
-      SQL_PORT: 5678
+      SQL_PORT: 5432
     depends_on:
       - db
   db:
     image: postgres
     restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: codeanon
       POSTGRES_PASSWORD: codeanon
       POSTGRES_DB: codeanon
+
+volumes:
+  db_data: {}
