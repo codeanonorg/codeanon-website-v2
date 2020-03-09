@@ -10,29 +10,29 @@ FROM python:3.8-alpine as builder
 WORKDIR /code/
 
 RUN apk update && apk --no-cache add python3 \
-                       build-base \
-                       python3-dev \
-                       # wget dependency
-                       openssl \
-                       openssl-dev \
-                       # dev dependencies
-                       git \
-                       bash \
-                       sudo \
-                       py3-pip \
-                       # Pillow dependencies
-                       jpeg-dev \
-                       zlib-dev \
-                       freetype-dev \
-                       lcms2-dev \
-                       openjpeg-dev \
-                       tiff-dev \
-                       tk-dev \
-                       tcl-dev \
-                       harfbuzz-dev \
-                       fribidi-dev \
-                       # Postgres dependencies
-                       postgresql-dev
+	build-base \
+	python3-dev \
+	# wget dependency
+	openssl \
+	openssl-dev \
+	# dev dependencies
+	git \
+	bash \
+	sudo \
+	py3-pip \
+	# Pillow dependencies
+	jpeg-dev \
+	zlib-dev \
+	freetype-dev \
+	lcms2-dev \
+	openjpeg-dev \
+	tiff-dev \
+	tk-dev \
+	tcl-dev \
+	harfbuzz-dev \
+	fribidi-dev \
+	# Postgres dependencies
+	postgresql-dev
 # Install any needed packages specified in requirements.txt
 COPY . /code/
 RUN pip install poetry
@@ -49,6 +49,7 @@ ARG ENV=dev
 ARG DATABASE_URL=sqlite:///db.sqlite3
 ENV DJANGO_ENV ${ENV}
 ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
+WORKDIR /code
 
 COPY . /code/
 COPY --from=node /code/node_modules /code/node_modules
