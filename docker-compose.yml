@@ -7,9 +7,9 @@ services:
     build:
       context: .
       args:
-        DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
         ENV: ${ENV:-dev}
     environment:
+      DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
       SECRET_KEY: ${SECRET_KEY:?Django secret key}
       DJANGO_HOST: ${DJANGO_HOST:?Server public host address}
       SQL_HOST: db
