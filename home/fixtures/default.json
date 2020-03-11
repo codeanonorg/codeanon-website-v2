@@ -1,0 +1,228 @@
+[
+	{
+		"model": "wagtailcore.page",
+		"pk": 4,
+		"fields": {
+			"path": "000100010001",
+			"depth": 3,
+			"numchild": 0,
+			"title": "\u00c0 propos",
+			"draft_title": "\u00c0 propos",
+			"slug": "about",
+			"content_type": 6,
+			"live": true,
+			"has_unpublished_changes": false,
+			"url_path": "/home/about/",
+			"owner": 1,
+			"seo_title": "",
+			"show_in_menus": true,
+			"search_description": "",
+			"go_live_at": null,
+			"expire_at": null,
+			"expired": false,
+			"locked": false,
+			"locked_at": null,
+			"locked_by": null,
+			"first_published_at": "2020-03-11T06:43:41.611Z",
+			"last_published_at": "2020-03-11T06:48:45.049Z",
+			"latest_revision_created_at": "2020-03-11T06:48:44.631Z",
+			"live_revision": 3
+		}
+	},
+	{
+		"model": "wagtailcore.pagerevision",
+		"pk": 1,
+		"fields": {
+			"page": 3,
+			"submitted_for_moderation": false,
+			"created_at": "2020-03-11T06:42:25.326Z",
+			"user": 1,
+			"content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 0, \"title\": \"Accueil\", \"draft_title\": \"Home\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon  est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de  r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est  d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce  au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les  sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de  l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents  projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus  personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"aa6ea264-97d8-4bec-b2ef-990913dd1b5b\\\"}]\"}",
+			"approved_go_live_at": null
+		}
+	},
+	{
+		"model": "wagtailcore.pagerevision",
+		"pk": 2,
+		"fields": {
+			"page": 4,
+			"submitted_for_moderation": false,
+			"created_at": "2020-03-11T06:43:41.459Z",
+			"user": 1,
+			"content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"\\u00c0 propos\", \"draft_title\": \"\\u00c0 propos\", \"slug\": \"\\u00e0-propos\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\\u00e0-propos/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"subtitle\": \"CodeAnon, une association \\u00e9tudiante d'informatique Toulousaine.\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"37d5d550-3680-44b4-bdb2-09df37b374b0\\\"}]\"}",
+			"approved_go_live_at": null
+		}
+	},
+	{
+		"model": "wagtailcore.pagerevision",
+		"pk": 3,
+		"fields": {
+			"page": 4,
+			"submitted_for_moderation": false,
+			"created_at": "2020-03-11T06:48:44.631Z",
+			"user": 1,
+			"content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"\\u00c0 propos\", \"draft_title\": \"\\u00c0 propos\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\\u00e0-propos/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T06:43:41.611Z\", \"last_published_at\": \"2020-03-11T06:43:41.611Z\", \"latest_revision_created_at\": \"2020-03-11T06:43:41.459Z\", \"live_revision\": 2, \"subtitle\": \"CodeAnon, une association \\u00e9tudiante d'informatique Toulousaine.\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"37d5d550-3680-44b4-bdb2-09df37b374b0\\\"}]\"}",
+			"approved_go_live_at": null
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 1,
+		"fields": {
+			"group": 1,
+			"page": 1,
+			"permission_type": "add"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 2,
+		"fields": {
+			"group": 1,
+			"page": 1,
+			"permission_type": "edit"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 3,
+		"fields": {
+			"group": 1,
+			"page": 1,
+			"permission_type": "publish"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 4,
+		"fields": {
+			"group": 2,
+			"page": 1,
+			"permission_type": "add"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 5,
+		"fields": {
+			"group": 2,
+			"page": 1,
+			"permission_type": "edit"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 6,
+		"fields": {
+			"group": 1,
+			"page": 1,
+			"permission_type": "lock"
+		}
+	},
+	{
+		"model": "wagtailcore.grouppagepermission",
+		"pk": 7,
+		"fields": {
+			"group": 1,
+			"page": 1,
+			"permission_type": "unlock"
+		}
+	},
+	{
+		"model": "wagtailcore.collection",
+		"pk": 1,
+		"fields": {
+			"path": "0001",
+			"depth": 1,
+			"numchild": 0,
+			"name": "Root"
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 1,
+		"fields": {
+			"group": 2,
+			"collection": 1,
+			"permission": 2
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 2,
+		"fields": {
+			"group": 1,
+			"collection": 1,
+			"permission": 2
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 3,
+		"fields": {
+			"group": 2,
+			"collection": 1,
+			"permission": 3
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 4,
+		"fields": {
+			"group": 1,
+			"collection": 1,
+			"permission": 3
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 5,
+		"fields": {
+			"group": 2,
+			"collection": 1,
+			"permission": 5
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 6,
+		"fields": {
+			"group": 1,
+			"collection": 1,
+			"permission": 5
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 7,
+		"fields": {
+			"group": 2,
+			"collection": 1,
+			"permission": 6
+		}
+	},
+	{
+		"model": "wagtailcore.groupcollectionpermission",
+		"pk": 8,
+		"fields": {
+			"group": 1,
+			"collection": 1,
+			"permission": 6
+		}
+	},
+	{
+		"model": "home.homepage",
+		"pk": 3,
+		"fields": {
+			"content": "[{\"type\": \"rich_text\", \"value\": \"<h2>Pr\\u00e9sentation de l&#x27;association</h2><p>CodeAnon  est une jeune association d&#x27;apprentissage, d&#x27;exp\\u00e9rimentation et de  r\\u00e9alisation de projets entre passionn\\u00e9s d&#x27;informatique. Son but est  d&#x27;offrir un environnement productif pour aiguiser ses comp\\u00e9tences gr\\u00e2ce  au partage de connaissances.</p><h2>Pr\\u00e9sentation du site web</h2><p>Ce site web met \\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\u00e9rents de l&#x27;association.</p><p>Les  sujets trait\\u00e9s sont nombreux et principalement ax\\u00e9s autour du monde de  l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\u00e9rience sur diff\\u00e9rents  projets port\\u00e9s par les membres de l&#x27;association ou de projets plus  personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\", \"id\": \"aa6ea264-97d8-4bec-b2ef-990913dd1b5b\"}]"
+		}
+	},
+	{
+		"model": "home.flexiblepage",
+		"pk": 4,
+		"fields": {
+			"subtitle": "CodeAnon, une association \u00e9tudiante d'informatique Toulousaine.",
+			"content": "[{\"type\": \"rich_text\", \"value\": \"<h2>Qui sommes-nous ?</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\u00e9rimentation et de r\\u00e9alisation de projets entre passionn\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\u00e9tences gr\\u00e2ce au partage de connaissances.</p><h2>Pr\\u00e9sentation du site web</h2><p>Ce site web met \\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\u00e9s sont nombreux et principalement ax\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\u00e9rience sur diff\\u00e9rents projets port\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\", \"id\": \"37d5d550-3680-44b4-bdb2-09df37b374b0\"}]"
+		}
+	}
+]
