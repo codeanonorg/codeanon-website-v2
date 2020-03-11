@@ -12,6 +12,22 @@ class RegisterView(FormView):
     form_class = RegisterForm
     success_url = settings.LOGIN_REDIRECT_URL
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+
+        helper = FormHelper()
+        helper.form_class = "layout col-light"
+        helper.layout = Layout(
+            Field("username", placeholder="Username"),
+            Field("first_name", placeholder="First name"),
+            Field("last_name", placeholder="Last name"),
+            Field("password1", placeholder="Password"),
+            Field("password2", placeholder="Password (confirm)"),
+            HTML('<button class="btn btn-primary" type="submit">Register</button>'),
+        )
+        form.helper = helper
+        return form
+
 
 class LoginView(auth_views.LoginView):
     template_name = "crispy_form.html"
