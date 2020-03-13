@@ -34,11 +34,11 @@
 {% endblock %}
 {% block content %}{% endblock %}
 
-{# Global javascript #}
-<script type="text/javascript" src="{% static 'js/codeanon.js' %}"></script>
 {% block footer %}
   {% include "include/footer.html" %}
 {% endblock %}
+{# Global javascript #}
+<script type="text/javascript" src="{% static 'js/codeanon.js' %}"></script>
 {% block extra_js %}
   {# Override this in templates to add extra javascript #}
 {% endblock %}

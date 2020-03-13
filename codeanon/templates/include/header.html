@@ -6,19 +6,19 @@
 	<nav class="navbar">
 		<div href="/" class="navbar-brand">
 			<a href="/" class="navbar-item">
-				<img src="{% static "img/logo.svg" %}" alt="CodeAnon" />
+				<img src="{% static "img/logo.svg" %}" alt="CodeAnon"/>
 			</a>
 			<div class="navbar-burger">
-				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-					data-target="main-navbar">
+				<a role="button" class="navbar-burger burger" data-target="main-navbar" aria-label="menu"
+				   aria-expanded="false">
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</a>
 			</div>
 		</div>
-		<div class="navbar-menu is-spaced">
-			{% if menu %}
+		<div class="navbar-menu is-spaced" id="main-navbar">
+          {% if menu %}
 			<div class="navbar-start">
 				{% for item in menu %}
 				<div class="navbar-item"><a href="{{ item.url }}">{{ item.title }}</a></div>
