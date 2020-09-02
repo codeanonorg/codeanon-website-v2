@@ -1,9 +1,10 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Button
+from crispy_forms.layout import Layout
 from django import forms
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django_crispy_bulma import forms as bulma_forms
+from django_crispy_bulma.layout import Field, Submit, Row, Column
 from wagtail.users.forms import UserCreationForm
 
 User = get_user_model()
@@ -25,33 +26,37 @@ class RegisterForm(UserCreationForm):
         label="Email",
         error_messages={"exists": "Cette adresse email existe déjà"},
     )
-    first_name = forms.CharField(empty_value="John")
-    last_name = forms.CharField(empty_value="Doe")
+    first_name = forms.CharField(empty_value="John", label="Prénom")
+    last_name = forms.CharField(empty_value="Doe", label="Nom")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_class = "layout col-light columns"
+        self.helper = FormHelper(self)
         self.helper.layout = Layout(
-            Field("username", placeholder="Nom d'utilisateur"),
-            Field("first_name", placeholder="Prénom", css_class="column is-half"),
-            Field("last_name", placeholder="Nom", css_class="column is-half"),
-            "first_name",
-            "last_name",
-            "email",
-            "password1",
-            "password2",
-            Button("submit", "S'enregistrer", type="submit", css_class="col-light"),
+            Row(
+                Column(Field("username")),
+                Column(Field("email")),
+            ),
+            Row(
+                Column(Field("first_name")),
+                Column(Field("last_name")),
+            ),
+            Field("password1"),
+            Field("password2"),
+            Submit("submit", "Confirmer l'inscription", css_class="is-primary")
         )
 
     def save(self, commit=True):
+        print("##### SAVE #####")
         user = super().save(commit=False)
         user.email = self.cleaned_data["email"]
         if commit:
             user.save()
+            self.save_m2m()
         return user
 
     def clean_email(self):
+        print("### CLEAN EMAIL ###")
         if User.objects.filter(email=self.cleaned_data["email"]).exists():
             raise ValidationError(self.fields["email"].error_messages["exists"])
         return self.cleaned_data["email"]

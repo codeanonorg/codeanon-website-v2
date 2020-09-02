@@ -32,6 +32,18 @@
 {% block header %}
   {% include "include/header.html" %}
 {% endblock %}
+{% if messages %}
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                {% for msg in messages %}
+                    <div class="notification is-info{% if message.tags %} {{ message.tags }}{% endif %}">{{ message }}</div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endif %}
 {% block content %}{% endblock %}
 
 {% block footer %}

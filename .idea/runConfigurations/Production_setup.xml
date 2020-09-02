@@ -6,10 +6,15 @@
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="SECRET_KEY" />
-              <option name="value" value="abcdefghi" />
+              <option name="value" value="ChangeMe;IamNotReal" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="DJANGO_HOST" />
+              <option name="value" value="localhost" />
             </DockerEnvVarImpl>
           </list>
         </option>
+        <option name="removeVolumesOnComposeDown" value="true" />
         <option name="sourceFilePath" value="docker-compose.yml" />
       </settings>
     </deployment>

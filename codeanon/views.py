@@ -1,8 +1,9 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, HTML
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth import views as auth_views
 from django.views.generic import FormView
+from django_crispy_bulma.layout import Layout, Field, Submit
 
 from .forms import RegisterForm
 
@@ -12,21 +13,11 @@ class RegisterView(FormView):
     form_class = RegisterForm
     success_url = settings.LOGIN_REDIRECT_URL
 
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-
-        helper = FormHelper()
-        helper.form_class = "layout col-light"
-        helper.layout = Layout(
-            Field("username", placeholder="Username"),
-            Field("first_name", placeholder="First name"),
-            Field("last_name", placeholder="Last name"),
-            Field("password1", placeholder="Password"),
-            Field("password2", placeholder="Password (confirm)"),
-            HTML('<button class="btn btn-primary" type="submit">Register</button>'),
-        )
-        form.helper = helper
-        return form
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.add_message(self.request, messages.INFO,
+                             "Vous avez bien été inscrit. Veuillez maintenant vous connecter.")
+        return super().form_valid(form)
 
 
 class LoginView(auth_views.LoginView):
@@ -40,7 +31,7 @@ class LoginView(auth_views.LoginView):
         form.helper.layout = Layout(
             Field("username", placeholder="Username"),
             Field("password", placeholder="Password"),
-            HTML('<button class="btn btn-primary" type="submit">Login</button>'),
+            Submit("submit", "Se connecter", css_class="is-primary")
         )
 
         return form
