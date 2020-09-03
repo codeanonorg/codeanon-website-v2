@@ -65,6 +65,10 @@ COPY --from=node /code/node_modules /code/node_modules
 COPY --from=builder /wheels /wheels
 RUN pip install --no-cache /wheels/*
 
+RUN SECRET_KEY="tempkey" \
+    python manage.py compilescss && \
+    python manage.py collectstatic --noinput --clear --ignore="*.sass" --ignore="*.scss"
+
 RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
