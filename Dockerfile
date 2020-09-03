@@ -69,4 +69,4 @@ RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
 EXPOSE ${PORT}
-CMD ["./docker_entry.sh", "gunicorn", "codeanon.wsgi:application", "--workers=3", "--bind=0.0.0.0:${PORT}"]
+CMD ./docker_entry.sh gunicorn codeanon.wsgi:application --workers=3 --bind=0.0.0.0:$PORT
