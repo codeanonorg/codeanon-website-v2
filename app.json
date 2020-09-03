@@ -1,0 +1,28 @@
+{
+  "name": "CodeAnon Website",
+  "website": "https://codeanon.org",
+  "repository": "https://github.com/codeanonorg/codeanon-website-v2",
+  "stack": "containers",
+  "env": {
+    "SECRET_KEY": {
+      "description": "Used by Django to generate secrets for cookie and CSRF tokens."
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "heroku-postgres:hobby-dev",
+    "logentries:tryit"
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "./manage.py test"
+      }
+    }
+  }
+}
