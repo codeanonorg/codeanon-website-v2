@@ -1,3 +1,5 @@
+<img src="/codeanon/static/img/logo.svg" align="right" width="400" alt="CodeAnon logo" />
+
 # CodeAnon Website
 
 This is the website for the CodeAnon organization.
