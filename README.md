@@ -2,6 +2,38 @@
 
 This is the website for the CodeAnon organization.
 
+## Development
+
+### Dependencies
+
+- Python 3.8 with `poetry` installed
+- Node v12 or v14 with `yarn` installed
+- `docker` and `docker-compose` (optional; for testing the production environment only)
+
+### Getting started
+
+1. Setup the project with `poetry install`
+2. Setup the front-end dependencies with `yarn install`
+3. Open a shell with the python dependencies available with `poetry shell`:
+    1. Create the SQLite database with `./manage.py migrate`
+    2. Either:
+        - Add a dump of the live site data with `./manage.py loaddata codeanon/fixtures/dump.json`
+        - Create your local superuser account to manage the admin with `./manage.py createsuperuser`
+        
+        In either case the data will only be changed on your own computer and **not** in the live site.
+    2. Run the development server with `./manage.py runserver`
+    3. Open http://localhost:8080
+    
+### Modifying the CSS theme
+
+The website uses Bulma as the CSS framework. It was chosen because it is most easily themeable.
+
+The style files are written in Sass and are available in [/codeanon/static/css](/codeanon/static/css).
+
+### More resources
+
+- 
+
 ## Deployment
 
 ### Deployment through Docker

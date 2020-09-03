@@ -1,0 +1,808 @@
+[
+{
+    "model": "wagtailcore.site",
+    "pk": 2,
+    "fields": {
+        "hostname": "localhost",
+        "port": 80,
+        "site_name": null,
+        "root_page": 3,
+        "is_default_site": true
+    }
+},
+{
+    "model": "wagtailcore.collection",
+    "pk": 1,
+    "fields": {
+        "path": "0001",
+        "depth": 1,
+        "numchild": 0,
+        "name": "Root"
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "Moderators",
+        "permissions": [
+            [
+                "access_admin",
+                "wagtailadmin",
+                "admin"
+            ],
+            [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "delete_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "delete_image",
+                "wagtailimages",
+                "image"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "Editors",
+        "permissions": [
+            [
+                "access_admin",
+                "wagtailadmin",
+                "admin"
+            ],
+            [
+                "add_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "change_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "delete_document",
+                "wagtaildocs",
+                "document"
+            ],
+            [
+                "add_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "change_image",
+                "wagtailimages",
+                "image"
+            ],
+            [
+                "delete_image",
+                "wagtailimages",
+                "image"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$9MV2qXB3hbmj$4mHujK7G0riZCvcCJWBFTXbuTK/xTblAkPe+jhZmULs=",
+        "last_login": "2020-09-03T14:43:06.586Z",
+        "is_superuser": true,
+        "username": "solarliner",
+        "first_name": "Nathan",
+        "last_name": "Graule",
+        "email": "solarliner@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-03-11T07:36:07.014Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$47W6s42i8xRD$1UycsUmC3QuLW/3O3LOk1iaO3Dgg/7QlNq6ImSjwEy0=",
+        "last_login": "2020-09-02T21:55:36.260Z",
+        "is_superuser": true,
+        "username": "ixxios",
+        "first_name": "Arthur",
+        "last_name": "Correnson",
+        "email": "arthur.correnson@ens-rennes.fr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-09-02T19:28:02.249Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$fMJT45D2mvEt$k5yROVEKpKMw3/gLq3crWw1Zg1JN1KeO+VmBKFxhEbI=",
+        "last_login": "2020-09-03T14:45:54.772Z",
+        "is_superuser": false,
+        "username": "Jack",
+        "first_name": "Pierre",
+        "last_name": "Beckers",
+        "email": "pierre.sreckcep@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-09-03T14:45:38.199Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 1,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "add"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 2,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "edit"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 3,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "publish"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 4,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "page": 1,
+        "permission_type": "add"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 5,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "page": 1,
+        "permission_type": "edit"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 6,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "lock"
+    }
+},
+{
+    "model": "wagtailcore.grouppagepermission",
+    "pk": 7,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "page": 1,
+        "permission_type": "unlock"
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 1,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-03-11T07:46:21.983Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 0, \"title\": \"Accueil\", \"draft_title\": \"Home\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 2,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-03-11T07:47:06.437Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"\\u00c0 propos\", \"draft_title\": \"\\u00c0 propos\", \"slug\": \"\\u00e0-propos\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\\u00e0-propos/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"subtitle\": \"CodeAnon, une association \\u00e9tudiante d'informatique Toulousaine.\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 3,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-03-11T07:47:20.666Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"\\u00c0 propos\", \"draft_title\": \"\\u00c0 propos\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\\u00e0-propos/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-03-11T07:47:06.468Z\", \"latest_revision_created_at\": \"2020-03-11T07:47:06.437Z\", \"live_revision\": 2, \"subtitle\": \"CodeAnon, une association \\u00e9tudiante d'informatique Toulousaine.\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 4,
+    "fields": {
+        "page": 5,
+        "submitted_for_moderation": false,
+        "created_at": "2020-04-05T19:29:19.116Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 5, \"path\": \"000100010002\", \"depth\": 3, \"numchild\": 0, \"title\": \"Serveur discord\", \"draft_title\": \"Serveur discord\", \"slug\": \"discord\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/discord/\", \"owner\": 1, \"seo_title\": \"Discord\", \"show_in_menus\": true, \"search_description\": \"Serveur Discord CodeAnon\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"subtitle\": \"Nous avons un serveur officiel !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<p>Nous poss\\\\u00e9dons un serveur Discord, accessible \\\\u00e0 l&#x27;adresse suivante:</p><h2><a href=\\\\\\\"https://discord.gg/c5SwFG\\\\\\\">https://discord.gg/c5SwFG</a></h2>\\\", \\\"id\\\": \\\"bcf3df08-591f-441f-b78d-36a52ff24c5f\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 5,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-04-05T20:01:39.827Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-03-11T07:46:22.022Z\", \"latest_revision_created_at\": \"2020-03-11T07:46:21.983Z\", \"live_revision\": 1, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p><h2>Serveur Discord officiel</h2><p>Nous avons un serveur Discord officiel o\\\\u00f9 les membres se retrouvent pour partager et \\\\u00e9changer. Vous pouvez nous rejoindre <a href=\\\\\\\"https://discord.gg/mYAESTY\\\\\\\">par ce lien d&#x27;invitation</a>.</p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 6,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-08-15T21:52:06.619Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-04-05T20:01:39.876Z\", \"latest_revision_created_at\": \"2020-04-05T20:01:39.827Z\", \"live_revision\": 5, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une jeune association d&#x27;apprentissage, d&#x27;exp\\\\u00e9rimentation et de r\\\\u00e9alisation de projets entre passionn\\\\u00e9s d&#x27;informatique. Son but est d&#x27;offrir un environnement productif pour aiguiser ses comp\\\\u00e9tences gr\\\\u00e2ce au partage de connaissances.</p><h2>Pr\\\\u00e9sentation du site web</h2><p>Ce site web met \\\\u00e0 disposition un blog communautaire dont les auteurs sont des adh\\\\u00e9rents de l&#x27;association.</p><p>Les sujets trait\\\\u00e9s sont nombreux et principalement ax\\\\u00e9s autour du monde de l&#x27;informatique. Vous y trouverez des retours d&#x27;exp\\\\u00e9rience sur diff\\\\u00e9rents projets port\\\\u00e9s par les membres de l&#x27;association ou de projets plus personnels, le tout dans une optique de partage et d&#x27;apprentissage.</p><h2>Serveur Discord officiel</h2><p>Nous avons un serveur Discord officiel o\\\\u00f9 les membres se retrouvent pour partager et \\\\u00e9changer. Vous pouvez nous rejoindre <a href=\\\\\\\"https://discord.gg/c5SwFG\\\\\\\">par ce lien d&#x27;invitation</a>.</p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 7,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T19:30:42.006Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-08-15T21:52:06.759Z\", \"latest_revision_created_at\": \"2020-08-15T21:52:06.619Z\", \"live_revision\": 6, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p><b>De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association  couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des  conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</b></p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association  CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents  logiciels et outils open-source. De nouveaux contributeurs ainsi que de  nouvelles propositions de projets sont toujours les bienvenus.<br/> </p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il  s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es,  l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage  des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement pas l\\\\u2019organisation de  conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec  l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 8,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T19:30:55.723Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": true, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-08-15T21:52:06.759Z\", \"latest_revision_created_at\": \"2020-09-02T19:30:42.006Z\", \"live_revision\": 6, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p><b>De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</b></p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenus.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement pas l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 9,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T19:32:00.336Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-09-02T19:30:55.752Z\", \"latest_revision_created_at\": \"2020-09-02T19:30:55.723Z\", \"live_revision\": 8, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une association \\\\u00e9tudiante dont l\\\\u2019objectif est de promouvoir les sciences informatiques. De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenus.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement pas l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 10,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T19:32:15.397Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-09-02T19:32:00.382Z\", \"latest_revision_created_at\": \"2020-09-02T19:32:00.336Z\", \"live_revision\": 9, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p><b>De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</b></p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenus.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement pas l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 11,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T19:34:01.764Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-09-02T19:32:15.442Z\", \"latest_revision_created_at\": \"2020-09-02T19:32:15.397Z\", \"live_revision\": 10, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une association \\\\u00e9tudiante dont l\\\\u2019objectif est de promouvoir les sciences informatiques. De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenus.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement pas l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 12,
+    "fields": {
+        "page": 5,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:02:30.637Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 5, \"path\": \"000100010002\", \"depth\": 3, \"numchild\": 0, \"title\": \"Serveur discord\", \"draft_title\": \"Serveur discord\", \"slug\": \"discord\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/discord/\", \"owner\": 1, \"seo_title\": \"Discord\", \"show_in_menus\": true, \"search_description\": \"Serveur Discord CodeAnon\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-04-05T19:29:19.144Z\", \"last_published_at\": \"2020-04-05T19:29:19.144Z\", \"latest_revision_created_at\": \"2020-04-05T19:29:19.116Z\", \"live_revision\": 4, \"subtitle\": \"Nous avons un serveur officiel !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<p>Nous poss\\\\u00e9dons un serveur Discord, accessible \\\\u00e0 l&#x27;adresse suivante:</p><h2><a href=\\\\\\\"https://discord.gg/bf7TABb\\\\\\\">Rejoins nous !</a></h2>\\\", \\\"id\\\": \\\"bcf3df08-591f-441f-b78d-36a52ff24c5f\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 13,
+    "fields": {
+        "page": 5,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:10:08.856Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 5, \"path\": \"000100010002\", \"depth\": 3, \"numchild\": 0, \"title\": \"Serveur discord\", \"draft_title\": \"Serveur discord\", \"slug\": \"discord\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/discord/\", \"owner\": 1, \"seo_title\": \"Discord\", \"show_in_menus\": true, \"search_description\": \"Serveur Discord CodeAnon\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-04-05T19:29:19.144Z\", \"last_published_at\": \"2020-09-02T20:02:30.844Z\", \"latest_revision_created_at\": \"2020-09-02T20:02:30.637Z\", \"live_revision\": 12, \"subtitle\": \"Nous avons un serveur officiel !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<p>Le serveur discord de l&#x27;association est l&#x27;un des lieu phares de notre activit\\\\u00e9. Beaucoup de nouvelles, de discussions et de d\\\\u00e9bat y sont \\\\u00e9chang\\\\u00e9s. C&#x27;est donc un passage in\\\\u00e9vitable pour tous les int\\\\u00e9ress\\\\u00e9s !<br/></p><p>C&#x27;est quoi un discord ?<br/><br/>Si vous ne connaissez pas encore discord, vous allez adorer ce qui va suivre. Discord est un outils de communication en ligne. Il propose des fonctionnalit\\\\u00e9s de discussion par \\\\u00e9crit, par oral et par vid\\\\u00e9o (un peu comme un skype). Mais Discord a une grande particularit\\\\u00e9 qui le diff\\\\u00e9rencie des autres services du m\\\\u00eame type : son fonctionnement par serveur. L\\\\u00e0 ou un logiciel tel que Skype va proposer des discussions instantan\\\\u00e9es, Discord propose un syst\\\\u00e8me de salons permettant de faire persister les \\\\u00e9changes. Par ailleurs, nul besoin de lancer un appel pour commencer une discussion, il suffit simplement de se connecter dans un salon de discussion audio et d&#x27;attendre d&#x27;\\\\u00eatre rejoint par les autres membres du serveur !<br/></p><p><a href=\\\\\\\"https://discord.gg/bf7TABb\\\\\\\">Rejoins nous !</a><br/><br/>Attention, le lien pr\\\\u00e9c\\\\u00e9dent ne donne pas d&#x27;acc\\\\u00e8s permanent au serveur. Pour devenir membre, les administrateurs de l&#x27;association vous contacterons d\\\\u00e9s votre arriv\\\\u00e9. N&#x27;h\\\\u00e9sitez pas \\\\u00e0 envoyer un mail \\\\u00e0 l&#x27;adresse contact@codeanon.org en cas de probl\\\\u00e8me ou de question, l&#x27;\\\\u00e9quipe se fera une joie de vous aider.<br/></p>\\\", \\\"id\\\": \\\"bcf3df08-591f-441f-b78d-36a52ff24c5f\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 14,
+    "fields": {
+        "page": 5,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:13:01.819Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 5, \"path\": \"000100010002\", \"depth\": 3, \"numchild\": 0, \"title\": \"Serveur discord\", \"draft_title\": \"Serveur discord\", \"slug\": \"discord\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/discord/\", \"owner\": 1, \"seo_title\": \"Discord\", \"show_in_menus\": true, \"search_description\": \"Serveur Discord CodeAnon\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-04-05T19:29:19.144Z\", \"last_published_at\": \"2020-09-02T20:10:08.907Z\", \"latest_revision_created_at\": \"2020-09-02T20:10:08.856Z\", \"live_revision\": 13, \"subtitle\": \"Nous avons un serveur officiel !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<p>Le serveur discord de l&#x27;association est l&#x27;un des lieus phares de notre activit\\\\u00e9. Beaucoup de nouvelles, de discussions et de d\\\\u00e9bats y sont \\\\u00e9chang\\\\u00e9s. C&#x27;est donc un passage in\\\\u00e9vitable pour tous les int\\\\u00e9ress\\\\u00e9s !<br/></p><h2>C&#x27;est quoi Discord ?</h2><p><br/>Si vous ne connaissez pas encore discord, vous allez adorer ce qui va suivre. Discord est un outils de communication en ligne. Il propose des fonctionnalit\\\\u00e9s de discussion par \\\\u00e9crit, par oral et par vid\\\\u00e9o (un peu comme Skype). Mais Discord a une grande particularit\\\\u00e9 qui le diff\\\\u00e9rencie des autres services du m\\\\u00eame type : son fonctionnement par serveur. L\\\\u00e0 ou un logiciel tel que Skype va proposer des discussions instantan\\\\u00e9es, Discord propose un syst\\\\u00e8me de salons permettant de faire persister les \\\\u00e9changes. Par ailleurs, nul besoin de lancer un appel pour commencer une discussion, il suffit simplement de se connecter dans un salon de discussion audio et d&#x27;attendre d&#x27;\\\\u00eatre rejoint par les autres membres du serveur !<br/></p><p><a href=\\\\\\\"https://discord.gg/bf7TABb\\\\\\\">Rejoins nous !</a><br/><br/>Attention, le lien pr\\\\u00e9c\\\\u00e9dent ne donne pas d&#x27;acc\\\\u00e8s permanent au serveur. Pour devenir membre, les administrateurs de l&#x27;association vous contacterons d\\\\u00e9s votre arriv\\\\u00e9. N&#x27;h\\\\u00e9sitez pas \\\\u00e0 envoyer un mail \\\\u00e0 l&#x27;adresse mail <a href=\\\\\\\"mailto:contact@codeanon.org\\\\\\\">contact@codeanon.org</a> en cas de probl\\\\u00e8me ou de question, l&#x27;\\\\u00e9quipe se fera une joie de vous aider.<br/></p>\\\", \\\"id\\\": \\\"bcf3df08-591f-441f-b78d-36a52ff24c5f\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 15,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:19:51.586Z",
+        "user": [
+            "solarliner"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 2, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-09-02T19:34:01.821Z\", \"latest_revision_created_at\": \"2020-09-02T19:34:01.764Z\", \"live_revision\": 11, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une association \\\\u00e9tudiante dont l\\\\u2019objectif est de promouvoir les sciences informatiques. De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenues.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement par l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 16,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:29:15.153Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"Staff\", \"draft_title\": \"\\u00c0 propos\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/about/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-03-11T07:47:20.696Z\", \"latest_revision_created_at\": \"2020-03-11T07:47:20.666Z\", \"live_revision\": 3, \"subtitle\": \"Un bureau de passionn\\u00e9s, pour vous !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\\\u00e9 \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\\\u00e2ce \\\\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\\\u00e9n\\\\u00e9reusement du temps pour proposer un contenu de qualit\\\\u00e9 aux passionn\\\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Le Staff </h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\\\\\"mailto:arthur.correnson@ens-rennes.fr\\\\\\\">arthur.correnson@ens-rennes.fr</a>)</li><li>Nathan Graule (<a href=\\\\\\\"mailto:solarliner@gmail.com\\\\\\\">solarliner@gmail.com</a>)<br/></li></ul><h2></h2>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 17,
+    "fields": {
+        "page": 6,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T20:31:57.392Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 6, \"path\": \"000100010003\", \"depth\": 3, \"numchild\": 0, \"title\": \"Ann\\u00e9e 2020-2021\", \"draft_title\": \"Ann\\u00e9e 2020-2021\", \"slug\": \"ann\\u00e9e-2020-2021\", \"content_type\": 6, \"live\": false, \"has_unpublished_changes\": false, \"url_path\": \"/home/ann\\u00e9e-2020-2021/\", \"owner\": 2, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": null, \"live_revision\": null, \"subtitle\": \"D\\u00e9roulement de l'ann\\u00e9e universitaire\", \"content\": \"[]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 20,
+    "fields": {
+        "page": 6,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T21:14:31.524Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 6, \"path\": \"000100010003\", \"depth\": 3, \"numchild\": 0, \"title\": \"Ann\\u00e9e 2020-2021\", \"draft_title\": \"Ann\\u00e9e 2020-2021\", \"slug\": \"ann\\u00e9e-2020-2021\", \"content_type\": 6, \"live\": false, \"has_unpublished_changes\": true, \"url_path\": \"/home/ann\\u00e9e-2020-2021/\", \"owner\": 2, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": null, \"last_published_at\": null, \"latest_revision_created_at\": \"2020-09-02T20:31:57.392Z\", \"live_revision\": null, \"subtitle\": \"D\\u00e9roulement de l'ann\\u00e9e universitaire\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;ann\\\\u00e9e</h2><p>L&#x27;ann\\\\u00e9e universitaire 2020-2021 a commenc\\\\u00e9 et Il n&#x27;aura \\\\u00e9chapp\\\\u00e9 \\\\u00e0 personne que les conditions d&#x27;\\\\u00e9tudes vont \\\\u00eatre un peu particuli\\\\u00e8res cette ann\\\\u00e9e. Les associations \\\\u00e9tudiantes sont les premi\\\\u00e8re concern\\\\u00e9es !<br/>Heureusement, c&#x27;est aussi l&#x27;occasion pour nous de se r\\\\u00e9-inventer. L&#x27;\\\\u00e9quipe de CodeAnon a travaill\\\\u00e9 tout l&#x27;\\\\u00e9t\\\\u00e9 pour d\\\\u00e9velopper sa pr\\\\u00e9sence 100% num\\\\u00e9rique ! Blog, ateliers en ligne, tutoriaux vid\\\\u00e9os, discussions Discord,  il existe bien des outils pour continuer \\\\u00e0 vivre notre passion de l&#x27;informatique ! Aussi, nous invitons chaleureusement tous les membres \\\\u00e0 nous aider \\\\u00e0 entretenir et animer notre catalogue de ressources en ligne.<br/></p><h2>\\\\u00c9v\\\\u00e8nements</h2><p>Les ann\\\\u00e9es pass\\\\u00e9es, CodeAnon vivait majoritairement de deux types d&#x27;\\\\u00e9v\\\\u00e8nement. D&#x27;une part les conf\\\\u00e9rences du Mardi soir o\\\\u00f9 des \\\\u00e9tudiants animaient des pr\\\\u00e9sentations autour de th\\\\u00e9matiques cibl\\\\u00e9es en informatique; ces conf\\\\u00e9rences \\\\u00e9taient g\\\\u00e9n\\\\u00e9ralement compl\\\\u00e9ment\\\\u00e9es par un atelier de programmation qui illustrait les concepts abord\\\\u00e9s. D&#x27;autre part, les ateliers cybers\\\\u00e9curit\\\\u00e9 du Jeudi dans lesquels \\\\u00e9taient propos\\\\u00e9 une v\\\\u00e9ritable formation pratique aux techniques de <i>hacking. </i>Bien entendu, un tel mod\\\\u00e8le d&#x27;\\\\u00e9v\\\\u00e8nement en pr\\\\u00e9sentiel est inconcevable pour le moment. Mais cela ne signe pas l&#x27;arr\\\\u00eat de l&#x27;activit\\\\u00e9 pour autant ! Bien au contraire, ces ateliers seront de nouveau organis\\\\u00e9s cette ann\\\\u00e9e mais simplement sous une autre forme ! D&#x27;ailleurs, nous pr\\\\u00e9voyons m\\\\u00eame une hausse significative du nombre des participants. Bien au chaud derri\\\\u00e8re son PC, plus d&#x27;excuse pour ne pas assister aux ateliers <b>en ligne </b>ou aux conf\\\\u00e9rences <b>en live !</b></p><h2>Comment participer ?<br/></h2><p>Le calendrier des \\\\u00e9v\\\\u00e8nements sera diffus\\\\u00e9 tr\\\\u00e8s prochainement. D&#x27;ici l\\\\u00e0, le meilleur moyen de se tenir informer est de rejoindre notre <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a> ! Nous y publions quotidiennement des nouvelles.<br/>N&#x27;h\\\\u00e9sitez pas \\\\u00e9galement \\\\u00e0 nous faire part de vos envies, de vos id\\\\u00e9es, de vos projets de recherche ou de programmation en nous contactant \\\\u00e0 l&#x27;adresse <a href=\\\\\\\"mailto:contact@codeanon.org\\\\\\\">contact@codeanon.org</a>.</p><h2>Note(s) aux nouveaux arrivants</h2><p>Vous \\\\u00eates nouvellement \\\\u00e9tudiant.e \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier et vous vous passionnez pour l&#x27;informatique ? Vous avez entendu parler de l&#x27;association CodeAnon et souhaitez nous rejoindre ?<br/>Vous avez des id\\\\u00e9es de projets d&#x27;informatique ambitieux et vous cherchez des conseils techniques ? Cette section est faite pour vous !<br/><br/>Pour nous rejoindre, rien de plus simple ! Tout d&#x27;abord, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 vous manifester sur le <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a>. Si l&#x27;ambiance vous pla\\\\u00eet et que vous souhaitez prendre part \\\\u00e0 la vie de l&#x27;association, alors l&#x27;\\\\u00e9tape suivante et de remplir le formulaire d&#x27;adh\\\\u00e9sion. Il vous sera distribu\\\\u00e9 par les membres du Staff directement sur le campus. Encore une fois, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 nous solliciter par mail ou via discord pour de plus amples informations ! Le remplissage du formulaire d&#x27;adh\\\\u00e9sion s&#x27;accompagne du r\\\\u00e8glement de la modique somme de 5 euros. Cette cotisation permet \\\\u00e0 l&#x27;association de financer les projets et de proposer \\\\u00e0 un maximum d&#x27;\\\\u00e9tudiant des ateliers de qualit\\\\u00e9. Sans vous, nous n&#x27;existons pas !<br/><br/></p>\\\", \\\"id\\\": \\\"d3c1902b-bd9b-4211-9427-73901299b91b\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 21,
+    "fields": {
+        "page": 6,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T21:14:46.644Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 6, \"path\": \"000100010003\", \"depth\": 3, \"numchild\": 0, \"title\": \"Ann\\u00e9e 2020-2021\", \"draft_title\": \"Ann\\u00e9e 2020-2021\", \"slug\": \"ann\\u00e9e-2020-2021\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/ann\\u00e9e-2020-2021/\", \"owner\": 2, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-09-02T21:14:31.574Z\", \"last_published_at\": \"2020-09-02T21:14:31.574Z\", \"latest_revision_created_at\": \"2020-09-02T21:14:31.524Z\", \"live_revision\": 20, \"subtitle\": \"D\\u00e9roulement de l'ann\\u00e9e universitaire\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;ann\\\\u00e9e</h2><p>L&#x27;ann\\\\u00e9e universitaire 2020-2021 a commenc\\\\u00e9 et Il n&#x27;aura \\\\u00e9chapp\\\\u00e9 \\\\u00e0 personne que les conditions d&#x27;\\\\u00e9tudes vont \\\\u00eatre un peu particuli\\\\u00e8res cette ann\\\\u00e9e. Les associations \\\\u00e9tudiantes sont les premi\\\\u00e8re concern\\\\u00e9es !<br/>Heureusement, c&#x27;est aussi l&#x27;occasion pour nous de se r\\\\u00e9-inventer. L&#x27;\\\\u00e9quipe de CodeAnon a travaill\\\\u00e9 tout l&#x27;\\\\u00e9t\\\\u00e9 pour d\\\\u00e9velopper sa pr\\\\u00e9sence 100% num\\\\u00e9rique ! Blog, ateliers en ligne, tutoriaux vid\\\\u00e9os, discussions Discord, il existe bien des outils pour continuer \\\\u00e0 vivre notre passion de l&#x27;informatique ! Aussi, nous invitons chaleureusement tous les membres \\\\u00e0 nous aider \\\\u00e0 entretenir et animer notre catalogue de ressources en ligne.<br/></p><h2>\\\\u00c9v\\\\u00e8nements</h2><p>Les ann\\\\u00e9es pass\\\\u00e9es, CodeAnon vivait majoritairement de deux types d&#x27;\\\\u00e9v\\\\u00e8nement. D&#x27;une part les conf\\\\u00e9rences du Mardi soir o\\\\u00f9 des \\\\u00e9tudiants animaient des pr\\\\u00e9sentations autour de th\\\\u00e9matiques cibl\\\\u00e9es en informatique; ces conf\\\\u00e9rences \\\\u00e9taient g\\\\u00e9n\\\\u00e9ralement compl\\\\u00e9ment\\\\u00e9es par un atelier de programmation qui illustrait les concepts abord\\\\u00e9s. D&#x27;autre part, les ateliers cybers\\\\u00e9curit\\\\u00e9 du Jeudi dans lesquels \\\\u00e9taient propos\\\\u00e9 une v\\\\u00e9ritable formation pratique aux techniques de <i>hacking.</i> Bien entendu, un tel mod\\\\u00e8le d&#x27;\\\\u00e9v\\\\u00e8nement en pr\\\\u00e9sentiel est inconcevable pour le moment. Mais cela ne signe pas l&#x27;arr\\\\u00eat de l&#x27;activit\\\\u00e9 pour autant ! Bien au contraire, ces ateliers seront de nouveau organis\\\\u00e9s cette ann\\\\u00e9e mais simplement sous une autre forme ! D&#x27;ailleurs, nous pr\\\\u00e9voyons m\\\\u00eame une hausse significative du nombre des participants. Bien au chaud derri\\\\u00e8re son PC, plus d&#x27;excuse pour ne pas assister aux ateliers <b>en ligne</b> ou aux conf\\\\u00e9rences <b>en live !</b></p><h2>Comment participer ?<br/></h2><p>Le calendrier des \\\\u00e9v\\\\u00e8nements sera diffus\\\\u00e9 tr\\\\u00e8s prochainement. D&#x27;ici l\\\\u00e0, le meilleur moyen de se tenir informer est de rejoindre notre <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a> ! Nous y publions quotidiennement des nouvelles.<br/>N&#x27;h\\\\u00e9sitez pas \\\\u00e9galement \\\\u00e0 nous faire part de vos envies, de vos id\\\\u00e9es, de vos projets de recherche ou de programmation en nous contactant \\\\u00e0 l&#x27;adresse <a href=\\\\\\\"mailto:contact@codeanon.org\\\\\\\">contact@codeanon.org</a>.</p><h2>Note(s) aux nouveaux arrivants</h2><p>Vous \\\\u00eates nouvellement \\\\u00e9tudiant.e \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier et vous vous passionnez pour l&#x27;informatique ? Vous avez entendu parler de l&#x27;association CodeAnon et souhaitez nous rejoindre ?<br/>Vous avez des id\\\\u00e9es de projets d&#x27;informatique ambitieux et vous cherchez des conseils techniques ? Cette section est faite pour vous !<br/><br/>Pour nous rejoindre, rien de plus simple ! Tout d&#x27;abord, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 vous manifester sur le <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a>. Si l&#x27;ambiance vous pla\\\\u00eet et que vous souhaitez prendre part \\\\u00e0 la vie de l&#x27;association, alors l&#x27;\\\\u00e9tape suivante et de remplir le formulaire d&#x27;adh\\\\u00e9sion. Il vous sera distribu\\\\u00e9 par les membres du Staff directement sur le campus. Encore une fois, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 nous solliciter par mail ou via discord pour de plus amples informations ! Le remplissage du formulaire d&#x27;adh\\\\u00e9sion s&#x27;accompagne du r\\\\u00e8glement de la modique somme de 5 euros. Cette cotisation permet \\\\u00e0 l&#x27;association de financer les projets et de proposer \\\\u00e0 un maximum d&#x27;\\\\u00e9tudiant des ateliers de qualit\\\\u00e9. Sans vous, nous n&#x27;existons pas !<br/><br/></p>\\\", \\\"id\\\": \\\"d3c1902b-bd9b-4211-9427-73901299b91b\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 22,
+    "fields": {
+        "page": 6,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T21:29:28.440Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 6, \"path\": \"000100010003\", \"depth\": 3, \"numchild\": 0, \"title\": \"Ann\\u00e9e 2020-2021\", \"draft_title\": \"Ann\\u00e9e 2020-2021\", \"slug\": \"ann\\u00e9e-2020-2021\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/ann\\u00e9e-2020-2021/\", \"owner\": 2, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-09-02T21:14:31.574Z\", \"last_published_at\": \"2020-09-02T21:14:46.676Z\", \"latest_revision_created_at\": \"2020-09-02T21:14:46.644Z\", \"live_revision\": 21, \"subtitle\": \"D\\u00e9roulement de l'ann\\u00e9e universitaire\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;ann\\\\u00e9e</h2><p>L&#x27;ann\\\\u00e9e universitaire 2020-2021 a commenc\\\\u00e9 et Il n&#x27;aura \\\\u00e9chapp\\\\u00e9 \\\\u00e0 personne que les conditions d&#x27;\\\\u00e9tudes vont \\\\u00eatre un peu particuli\\\\u00e8res cette ann\\\\u00e9e. Les associations \\\\u00e9tudiantes sont les premi\\\\u00e8re concern\\\\u00e9es !<br/>Heureusement, c&#x27;est aussi l&#x27;occasion pour nous de se r\\\\u00e9-inventer. L&#x27;\\\\u00e9quipe de CodeAnon a travaill\\\\u00e9 tout l&#x27;\\\\u00e9t\\\\u00e9 pour d\\\\u00e9velopper sa pr\\\\u00e9sence 100% num\\\\u00e9rique ! Blog, ateliers en ligne, tutoriaux vid\\\\u00e9os, discussions Discord, il existe bien des outils pour continuer \\\\u00e0 vivre notre passion de l&#x27;informatique ! Aussi, nous invitons chaleureusement tous les membres \\\\u00e0 nous aider \\\\u00e0 entretenir et animer notre catalogue de ressources en ligne.<br/></p><h2>\\\\u00c9v\\\\u00e8nements</h2><p>Les ann\\\\u00e9es pass\\\\u00e9es, CodeAnon vivait majoritairement de deux types d&#x27;\\\\u00e9v\\\\u00e8nement. D&#x27;une part les conf\\\\u00e9rences du Mardi soir o\\\\u00f9 des \\\\u00e9tudiants animaient des pr\\\\u00e9sentations autour de th\\\\u00e9matiques cibl\\\\u00e9es en informatique; ces conf\\\\u00e9rences \\\\u00e9taient g\\\\u00e9n\\\\u00e9ralement compl\\\\u00e9ment\\\\u00e9es par un atelier de programmation qui illustrait les concepts abord\\\\u00e9s. D&#x27;autre part, les ateliers cybers\\\\u00e9curit\\\\u00e9 du Jeudi dans lesquels \\\\u00e9taient propos\\\\u00e9 une v\\\\u00e9ritable formation pratique aux techniques de <i>hacking.</i> Bien entendu, un tel mod\\\\u00e8le d&#x27;\\\\u00e9v\\\\u00e8nement en pr\\\\u00e9sentiel est inconcevable pour le moment. Mais cela ne signe pas l&#x27;arr\\\\u00eat de l&#x27;activit\\\\u00e9 pour autant ! Bien au contraire, ces ateliers seront de nouveau organis\\\\u00e9s cette ann\\\\u00e9e mais simplement sous une autre forme ! D&#x27;ailleurs, nous pr\\\\u00e9voyons m\\\\u00eame une hausse significative du nombre des participants. Bien au chaud derri\\\\u00e8re son PC, plus d&#x27;excuse pour ne pas assister aux ateliers <b>en ligne</b> ou aux conf\\\\u00e9rences <b>en live </b>!<br/><br/></p><h2>Pr\\\\u00e9sence num\\\\u00e9rique</h2><p>Vous l&#x27;aurez compris, cette ann\\\\u00e9e la vie de l&#x27;association se d\\\\u00e9roulera essentiellement <b>en ligne. </b>Mais \\\\u00e7a veut dire quoi exactement ?<br/>Nous pr\\\\u00e9voyons de concentrer l&#x27;activit\\\\u00e9 de CodeAnon sur 3 p\\\\u00f4les principalement :</p><ol><li><b>Le blog</b> : Il s&#x27;agit d&#x27;une plateforme de lecture/\\\\u00e9criture d&#x27;articles scientifiques. Tous les membres sont invit\\\\u00e9s \\\\u00e0 soumettre leur proposition d&#x27;article d\\\\u00e9s lors que le sujet vous semble pertinent et pr\\\\u00e9sente un int\\\\u00e9r\\\\u00eat p\\\\u00e9dagogique dans les disciplines math\\\\u00e9matiques ou informatique.</li><li><b>Le Discord : </b>C&#x27;est la plaque tournante de CodeAnon. Toutes les informations cruciales y sont diffus\\\\u00e9e. C&#x27;est aussi l\\\\u00e0 que se retrouve le plus grand nombre de membres (environ 156 membres)</li><li><b>La cha\\\\u00eene YouTube : </b>C&#x27;est la grande nouveaut\\\\u00e9 de l&#x27;ann\\\\u00e9e ! Des lives seront organis\\\\u00e9s r\\\\u00e9guli\\\\u00e8rement et de nombreuses vid\\\\u00e9os sont d\\\\u00e9j\\\\u00e0 pr\\\\u00e9vues ! N&#x27;h\\\\u00e9sitez pas \\\\u00e0 <a href=\\\\\\\"https://www.youtube.com/channel/UCy8iS4kdRQl-onovb5LiCCg\\\\\\\">vous y abonner</a>.<br/></li></ol><h2>Comment participer ?<br/></h2><p>Le calendrier des \\\\u00e9v\\\\u00e8nements sera diffus\\\\u00e9 tr\\\\u00e8s prochainement. D&#x27;ici l\\\\u00e0, le meilleur moyen de se tenir informer est de rejoindre notre <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a> ! Nous y publions quotidiennement des nouvelles.<br/>N&#x27;h\\\\u00e9sitez pas \\\\u00e9galement \\\\u00e0 nous faire part de vos envies, de vos id\\\\u00e9es, de vos projets de recherche ou de programmation en nous contactant \\\\u00e0 l&#x27;adresse <a href=\\\\\\\"mailto:contact@codeanon.org\\\\\\\">contact@codeanon.org</a>.</p><h2>Note(s) aux nouveaux arrivants</h2><p>Vous \\\\u00eates nouvellement \\\\u00e9tudiant.e \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier et vous vous passionnez pour l&#x27;informatique ? Vous avez entendu parler de l&#x27;association CodeAnon et souhaitez nous rejoindre ?<br/>Vous avez des id\\\\u00e9es de projets d&#x27;informatique ambitieux et vous cherchez des conseils techniques ? Cette section est faite pour vous !<br/><br/>Pour nous rejoindre, rien de plus simple ! Tout d&#x27;abord, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 vous manifester sur le <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a>. Si l&#x27;ambiance vous pla\\\\u00eet et que vous souhaitez prendre part \\\\u00e0 la vie de l&#x27;association, alors l&#x27;\\\\u00e9tape suivante et de remplir le formulaire d&#x27;adh\\\\u00e9sion. Il vous sera distribu\\\\u00e9 par les membres du Staff directement sur le campus. Encore une fois, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 nous solliciter par mail ou via discord pour de plus amples informations ! Le remplissage du formulaire d&#x27;adh\\\\u00e9sion s&#x27;accompagne du r\\\\u00e8glement de la modique somme de 5 euros. Cette cotisation permet \\\\u00e0 l&#x27;association de financer les projets et de proposer \\\\u00e0 un maximum d&#x27;\\\\u00e9tudiant des ateliers de qualit\\\\u00e9. Sans vous, nous n&#x27;existons pas !<br/><br/></p>\\\", \\\"id\\\": \\\"d3c1902b-bd9b-4211-9427-73901299b91b\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 23,
+    "fields": {
+        "page": 6,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T21:30:28.375Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 6, \"path\": \"000100010003\", \"depth\": 3, \"numchild\": 0, \"title\": \"Ann\\u00e9e 2020-2021\", \"draft_title\": \"Ann\\u00e9e 2020-2021\", \"slug\": \"ann\\u00e9e-2020-2021\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/ann\\u00e9e-2020-2021/\", \"owner\": 2, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-09-02T21:14:31.574Z\", \"last_published_at\": \"2020-09-02T21:29:28.510Z\", \"latest_revision_created_at\": \"2020-09-02T21:29:28.440Z\", \"live_revision\": 22, \"subtitle\": \"D\\u00e9roulement de l'ann\\u00e9e universitaire\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;ann\\\\u00e9e</h2><p>L&#x27;ann\\\\u00e9e universitaire 2020-2021 a commenc\\\\u00e9 et Il n&#x27;aura \\\\u00e9chapp\\\\u00e9 \\\\u00e0 personne que les conditions d&#x27;\\\\u00e9tudes vont \\\\u00eatre un peu particuli\\\\u00e8res cette ann\\\\u00e9e. Les associations \\\\u00e9tudiantes sont les premi\\\\u00e8re concern\\\\u00e9es !<br/>Heureusement, c&#x27;est aussi l&#x27;occasion pour nous de se r\\\\u00e9-inventer. L&#x27;\\\\u00e9quipe de CodeAnon a travaill\\\\u00e9 tout l&#x27;\\\\u00e9t\\\\u00e9 pour d\\\\u00e9velopper sa pr\\\\u00e9sence 100% num\\\\u00e9rique ! Blog, ateliers en ligne, tutoriaux vid\\\\u00e9os, discussions Discord, il existe bien des outils pour continuer \\\\u00e0 vivre notre passion de l&#x27;informatique ! Aussi, nous invitons chaleureusement tous les membres \\\\u00e0 nous aider \\\\u00e0 entretenir et animer notre catalogue de ressources en ligne.<br/></p><h2>\\\\u00c9v\\\\u00e8nements</h2><p>Les ann\\\\u00e9es pass\\\\u00e9es, CodeAnon vivait majoritairement de deux types d&#x27;\\\\u00e9v\\\\u00e8nement. D&#x27;une part les conf\\\\u00e9rences du Mardi soir o\\\\u00f9 des \\\\u00e9tudiants animaient des pr\\\\u00e9sentations autour de th\\\\u00e9matiques cibl\\\\u00e9es en informatique; ces conf\\\\u00e9rences \\\\u00e9taient g\\\\u00e9n\\\\u00e9ralement compl\\\\u00e9ment\\\\u00e9es par un atelier de programmation qui illustrait les concepts abord\\\\u00e9s. D&#x27;autre part, les ateliers cybers\\\\u00e9curit\\\\u00e9 du Jeudi dans lesquels \\\\u00e9taient propos\\\\u00e9 une v\\\\u00e9ritable formation pratique aux techniques de <i>hacking.</i> Bien entendu, un tel mod\\\\u00e8le d&#x27;\\\\u00e9v\\\\u00e8nement en pr\\\\u00e9sentiel est inconcevable pour le moment. Mais cela ne signe pas l&#x27;arr\\\\u00eat de l&#x27;activit\\\\u00e9 pour autant ! Bien au contraire, ces ateliers seront de nouveau organis\\\\u00e9s cette ann\\\\u00e9e mais simplement sous une autre forme ! D&#x27;ailleurs, nous pr\\\\u00e9voyons m\\\\u00eame une hausse significative du nombre des participants. Bien au chaud derri\\\\u00e8re son PC, plus d&#x27;excuse pour ne pas assister aux ateliers <b>en ligne</b> ou aux conf\\\\u00e9rences <b>en live</b> !<br/><br/></p><h2>Pr\\\\u00e9sence num\\\\u00e9rique</h2><p>Vous l&#x27;aurez compris, cette ann\\\\u00e9e la vie de l&#x27;association se d\\\\u00e9roulera essentiellement <b>en ligne.</b> Mais \\\\u00e7a veut dire quoi exactement ?<br/>Nous pr\\\\u00e9voyons de concentrer l&#x27;activit\\\\u00e9 de CodeAnon sur 3 p\\\\u00f4les principalement :</p><ol><li><b>Le blog</b> : Il s&#x27;agit d&#x27;une plateforme de lecture/\\\\u00e9criture d&#x27;articles scientifiques. Tous les membres sont invit\\\\u00e9s \\\\u00e0 soumettre leurs propositions d&#x27;articles d\\\\u00e9s lors que le sujet vous semble pertinent et pr\\\\u00e9sente un int\\\\u00e9r\\\\u00eat p\\\\u00e9dagogique dans les disciplines math\\\\u00e9matiques ou informatique.</li><li><b>Le Discord :</b> C&#x27;est la plaque tournante de CodeAnon. Toutes les informations cruciales y sont diffus\\\\u00e9e. C&#x27;est aussi l\\\\u00e0 que se retrouve le plus grand nombre de membres (environ 156 membres)</li><li><b>La cha\\\\u00eene YouTube :</b> C&#x27;est la grande nouveaut\\\\u00e9 de l&#x27;ann\\\\u00e9e ! Des lives seront organis\\\\u00e9s r\\\\u00e9guli\\\\u00e8rement et de nombreuses vid\\\\u00e9os sont d\\\\u00e9j\\\\u00e0 pr\\\\u00e9vues ! N&#x27;h\\\\u00e9sitez pas \\\\u00e0 <a href=\\\\\\\"https://www.youtube.com/channel/UCy8iS4kdRQl-onovb5LiCCg\\\\\\\">vous y abonner</a>.<br/></li></ol><h2>Comment participer ?<br/></h2><p>Le calendrier des \\\\u00e9v\\\\u00e8nements sera diffus\\\\u00e9 tr\\\\u00e8s prochainement. D&#x27;ici l\\\\u00e0, le meilleur moyen de se tenir informer est de rejoindre notre <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a> ! Nous y publions quotidiennement des nouvelles.<br/>N&#x27;h\\\\u00e9sitez pas \\\\u00e9galement \\\\u00e0 nous faire part de vos envies, de vos id\\\\u00e9es, de vos projets de recherche ou de programmation en nous contactant \\\\u00e0 l&#x27;adresse <a href=\\\\\\\"mailto:contact@codeanon.org\\\\\\\">contact@codeanon.org</a>.</p><h2>Note(s) aux nouveaux arrivants</h2><p>Vous \\\\u00eates nouvellement \\\\u00e9tudiant.e \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier et vous vous passionnez pour l&#x27;informatique ? Vous avez entendu parler de l&#x27;association CodeAnon et souhaitez nous rejoindre ?<br/>Vous avez des id\\\\u00e9es de projets d&#x27;informatique ambitieux et vous cherchez des conseils techniques ? Cette section est faite pour vous !<br/><br/>Pour nous rejoindre, rien de plus simple ! Tout d&#x27;abord, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 vous manifester sur le <a id=\\\\\\\"5\\\\\\\" linktype=\\\\\\\"page\\\\\\\">serveur discord</a>. Si l&#x27;ambiance vous pla\\\\u00eet et que vous souhaitez prendre part \\\\u00e0 la vie de l&#x27;association, alors l&#x27;\\\\u00e9tape suivante et de remplir le formulaire d&#x27;adh\\\\u00e9sion. Il vous sera distribu\\\\u00e9 par les membres du Staff directement sur le campus. Encore une fois, n&#x27;h\\\\u00e9sitez pas \\\\u00e0 nous solliciter par mail ou via discord pour de plus amples informations ! Le remplissage du formulaire d&#x27;adh\\\\u00e9sion s&#x27;accompagne du r\\\\u00e8glement de la modique somme de 5 euros. Cette cotisation permet \\\\u00e0 l&#x27;association de financer les projets et de proposer \\\\u00e0 un maximum d&#x27;\\\\u00e9tudiant des ateliers de qualit\\\\u00e9. Sans vous, nous n&#x27;existons pas !<br/><br/></p>\\\", \\\"id\\\": \\\"d3c1902b-bd9b-4211-9427-73901299b91b\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 24,
+    "fields": {
+        "page": 3,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T21:42:59.818Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 3, \"path\": \"00010001\", \"depth\": 2, \"numchild\": 3, \"title\": \"Accueil\", \"draft_title\": \"Accueil\", \"slug\": \"home\", \"content_type\": 2, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/\", \"owner\": null, \"seo_title\": \"\", \"show_in_menus\": false, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:46:22.022Z\", \"last_published_at\": \"2020-09-02T20:19:51.644Z\", \"latest_revision_created_at\": \"2020-09-02T20:19:51.586Z\", \"live_revision\": 15, \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Pr\\\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une association \\\\u00e9tudiante dont l\\\\u2019objectif est de promouvoir les sciences informatiques. De la cybers\\\\u00e9curit\\\\u00e9 \\\\u00e0 l\\\\u2019informatique fondamentale, l\\\\u2019association couvre un spectre large de th\\\\u00e9matiques en proposant des ateliers, des conf\\\\u00e9rences et des projets aux \\\\u00e9tudiants de tous horizons.</p><h2>Valeurs</h2><p>Fervents d\\\\u00e9fenseurs du logiciel libre, les membres de l\\\\u2019association CodeAnon encadrent et soutiennent le d\\\\u00e9veloppement de diff\\\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenues.<br/></p><p>L\\\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\\\u2019il s\\\\u2019agisse d\\\\u2019entraide, d\\\\u2019\\\\u00e9changes techniques ou de questions cibl\\\\u00e9es, l\\\\u2019association CodeAnon doit \\\\u00eatre un cadre convivial pour l\\\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\\\u2019activit\\\\u00e9 de CodeAnon se traduit essentiellement par l\\\\u2019organisation de conf\\\\u00e9rences hebdomadaires autour de th\\\\u00e9matiques vari\\\\u00e9es en lien avec l\\\\u2019informatique. \\\\u00c0 ces pr\\\\u00e9sentations, faites par des \\\\u00e9tudiants, s\\\\u2019ajoutent \\\\u00e9galement des ateliers de programmation r\\\\u00e9guliers.<br/><br/></p><h2>Pourquoi CodeAnon ?</h2><p>L&#x27;association CodeAnon est n\\\\u00e9e du projet fou d&#x27;une poign\\\\u00e9e de passionn\\\\u00e9s d&#x27;informatique. Tous issus de formations diff\\\\u00e9rentes et int\\\\u00e9ress\\\\u00e9s par des th\\\\u00e9matiques diff\\\\u00e9rentes, ils \\\\u00e9taient anim\\\\u00e9s par les m\\\\u00eame id\\\\u00e9aux de partage et de transmission des connaissances. Par ailleurs, il est parfois difficile au sein des grandes universit\\\\u00e9 de trouver une place pour exprimer sa cr\\\\u00e9ativit\\\\u00e9 et d\\\\u00e9velopper des projets ambitieux dans une discipline donn\\\\u00e9e. L&#x27;association CodeAnon a donc \\\\u00e9t\\\\u00e9 fond\\\\u00e9e dans le double but de servir d&#x27;espace de partage d&#x27;entraide et d&#x27;\\\\u00e9change autour des sciences informatique, mais \\\\u00e9galement avec un objectif de servir de laboratoire \\\\u00e9tudiant et d&#x27;interface avec les enseignants du d\\\\u00e9partement d&#x27;informatique. Par l&#x27;interm\\\\u00e9diaire de l&#x27;association, certains projets d&#x27;informatique ont pu \\\\u00eatre soutenu et encadr\\\\u00e9 par des enseignants de l&#x27;Institut de Recherche en Informatique de Toulouse. Nous en sommes aujourd&#x27;hui tr\\\\u00e8s fi\\\\u00e8res et esp\\\\u00e9rons continuer ce type de collaboration.<br/></p>\\\", \\\"id\\\": \\\"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 25,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T22:03:46.437Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"Staff\", \"draft_title\": \"Staff\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/about/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-09-02T20:29:15.198Z\", \"latest_revision_created_at\": \"2020-09-02T20:29:15.153Z\", \"live_revision\": 16, \"subtitle\": \"Un bureau de passionn\\u00e9s, pour vous !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\\\u00e9 \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\\\u00e2ce \\\\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\\\u00e9n\\\\u00e9reusement du temps pour proposer un contenu de qualit\\\\u00e9 aux passionn\\\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Un ou deux mots Staff</h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\\\\\"mailto:arthur.correnson@ens-rennes.fr\\\\\\\">arthur.correnson@ens-rennes.fr</a>) :<ul><li>Je suis passionn\\\\u00e9 d&#x27;informatique fondamentale. Je m&#x27;int\\\\u00e9resses aux liens forts qui existent entre logique math\\\\u00e9matique et langages de programmation. En particulier, je m&#x27;int\\\\u00e9resse \\\\u00e0 des langages de programmation qui permettent d&#x27;\\\\u00e9crire des preuves math\\\\u00e9matiques et des programmes dont la correction est prouv\\\\u00e9e. Au sein de l&#x27;association, j&#x27;organise les conf\\\\u00e9rences du Mardi o\\\\u00f9 nous discutons g\\\\u00e9n\\\\u00e9ralement de langages bizarres (mais int\\\\u00e9ressants) tels qu&#x27;OCaml ou Coq.</li></ul></li><li>Nathan Graule (<a href=\\\\\\\"mailto:solarliner@gmail.com\\\\\\\">solarliner@gmail.com</a>)<br/></li></ul><h2></h2>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 26,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T22:04:16.494Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"Staff\", \"draft_title\": \"Staff\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/about/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-09-02T22:03:46.528Z\", \"latest_revision_created_at\": \"2020-09-02T22:03:46.437Z\", \"live_revision\": 25, \"subtitle\": \"Un bureau de passionn\\u00e9s, pour vous !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\\\u00e9 \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\\\u00e2ce \\\\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\\\u00e9n\\\\u00e9reusement du temps pour proposer un contenu de qualit\\\\u00e9 aux passionn\\\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Un ou deux mots Staff</h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\\\\\"mailto:arthur.correnson@ens-rennes.fr\\\\\\\">arthur.correnson@ens-rennes.fr</a>) :<ul><li>Je suis passionn\\\\u00e9 d&#x27;informatique fondamentale. Je m&#x27;int\\\\u00e9resse aux liens forts qui existent entre logique math\\\\u00e9matique et langages de programmation. En particulier, je m&#x27;int\\\\u00e9resse \\\\u00e0 des langages de programmation qui permettent d&#x27;\\\\u00e9crire des preuves math\\\\u00e9matiques et des programmes dont la correction est prouv\\\\u00e9e. Au sein de l&#x27;association, j&#x27;organise les conf\\\\u00e9rences du Mardi o\\\\u00f9 nous discutons g\\\\u00e9n\\\\u00e9ralement de langages bizarres (mais int\\\\u00e9ressants) tels qu&#x27;OCaml ou Coq.</li></ul></li><li>Nathan Graule (<a href=\\\\\\\"mailto:solarliner@gmail.com\\\\\\\">solarliner@gmail.com</a>)<br/></li></ul><h2></h2>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 27,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T22:04:43.360Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"Staff\", \"draft_title\": \"Staff\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": false, \"url_path\": \"/home/about/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-09-02T22:04:16.542Z\", \"latest_revision_created_at\": \"2020-09-02T22:04:16.494Z\", \"live_revision\": 26, \"subtitle\": \"Un bureau de passionn\\u00e9s, pour vous !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\\\u00e9 \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\\\u00e2ce \\\\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\\\u00e9n\\\\u00e9reusement du temps pour proposer un contenu de qualit\\\\u00e9 aux passionn\\\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Un ou deux mots du Staff</h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\\\\\"mailto:arthur.correnson@ens-rennes.fr\\\\\\\">arthur.correnson@ens-rennes.fr</a>) :<ul><li>Je suis passionn\\\\u00e9 d&#x27;informatique fondamentale. Je m&#x27;int\\\\u00e9resse aux liens forts qui existent entre logique math\\\\u00e9matique et langages de programmation. En particulier, je m&#x27;int\\\\u00e9resse \\\\u00e0 des langages de programmation qui permettent d&#x27;\\\\u00e9crire des preuves math\\\\u00e9matiques et des programmes dont la correction est prouv\\\\u00e9e. Au sein de l&#x27;association, j&#x27;organise les conf\\\\u00e9rences du Mardi o\\\\u00f9 nous discutons g\\\\u00e9n\\\\u00e9ralement de langages bizarres (mais int\\\\u00e9ressants) tels qu&#x27;OCaml ou Coq.</li></ul></li><li>Nathan Graule (<a href=\\\\\\\"mailto:solarliner@gmail.com\\\\\\\">solarliner@gmail.com</a>)<br/></li></ul><h2></h2>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.pagerevision",
+    "pk": 28,
+    "fields": {
+        "page": 4,
+        "submitted_for_moderation": false,
+        "created_at": "2020-09-02T22:05:56.760Z",
+        "user": [
+            "ixxios"
+        ],
+        "content_json": "{\"pk\": 4, \"path\": \"000100010001\", \"depth\": 3, \"numchild\": 0, \"title\": \"Staff\", \"draft_title\": \"Staff\", \"slug\": \"about\", \"content_type\": 6, \"live\": true, \"has_unpublished_changes\": true, \"url_path\": \"/home/about/\", \"owner\": 1, \"seo_title\": \"\", \"show_in_menus\": true, \"search_description\": \"\", \"go_live_at\": null, \"expire_at\": null, \"expired\": false, \"locked\": false, \"locked_at\": null, \"locked_by\": null, \"first_published_at\": \"2020-03-11T07:47:06.468Z\", \"last_published_at\": \"2020-09-02T22:04:16.542Z\", \"latest_revision_created_at\": \"2020-09-02T22:04:43.360Z\", \"live_revision\": 26, \"subtitle\": \"Un bureau de passionn\\u00e9s, pour vous !\", \"content\": \"[{\\\"type\\\": \\\"rich_text\\\", \\\"value\\\": \\\"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\\\u00e9 \\\\u00e0 l&#x27;universit\\\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\\\u00e2ce \\\\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\\\u00e9n\\\\u00e9reusement du temps pour proposer un contenu de qualit\\\\u00e9 aux passionn\\\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Un ou deux mots du Staff</h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\\\\\"mailto:arthur.correnson@ens-rennes.fr\\\\\\\">arthur.correnson@ens-rennes.fr</a>) :<ul><li>Je suis passionn\\\\u00e9 d&#x27;informatique fondamentale. Je m&#x27;int\\\\u00e9resse aux liens forts qui existent entre logique math\\\\u00e9matique et langages de programmation. En particulier, je m&#x27;int\\\\u00e9resse \\\\u00e0 des langages de programmation qui permettent d&#x27;\\\\u00e9crire des preuves math\\\\u00e9matiques et des programmes dont la correction est prouv\\\\u00e9e. Au sein de l&#x27;association, j&#x27;organise les conf\\\\u00e9rences du Mardi o\\\\u00f9 nous discutons g\\\\u00e9n\\\\u00e9ralement de langages bizarres (mais int\\\\u00e9ressants) tels qu&#x27;OCaml ou Coq.</li></ul></li><li>Nathan Graule (<a href=\\\\\\\"mailto:solarliner@gmail.com\\\\\\\">solarliner@gmail.com</a>)</li><li>0x5AD</li><li>Varga</li><li>Tarek</li><li>Antonin</li><li>Vincent</li><li>Eve</li><li>Lili</li></ul><p></p>\\\", \\\"id\\\": \\\"5751b608-5d9f-4ed0-9838-6ac0338f87cf\\\"}]\"}",
+        "approved_go_live_at": null
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+        "path": "0001",
+        "depth": 1,
+        "numchild": 1,
+        "title": "Root",
+        "draft_title": "Root",
+        "slug": "root",
+        "content_type": [
+            "wagtailcore",
+            "page"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/",
+        "owner": null,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "first_published_at": null,
+        "last_published_at": null,
+        "latest_revision_created_at": null,
+        "live_revision": null
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+        "path": "00010001",
+        "depth": 2,
+        "numchild": 3,
+        "title": "Accueil",
+        "draft_title": "Accueil",
+        "slug": "home",
+        "content_type": [
+            "home",
+            "homepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/home/",
+        "owner": null,
+        "seo_title": "",
+        "show_in_menus": false,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "first_published_at": "2020-03-11T07:46:22.022Z",
+        "last_published_at": "2020-09-02T21:42:59.892Z",
+        "latest_revision_created_at": "2020-09-02T21:42:59.818Z",
+        "live_revision": 24
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+        "path": "000100010001",
+        "depth": 3,
+        "numchild": 0,
+        "title": "Staff",
+        "draft_title": "Staff",
+        "slug": "about",
+        "content_type": [
+            "home",
+            "flexiblepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/home/about/",
+        "owner": [
+            "solarliner"
+        ],
+        "seo_title": "",
+        "show_in_menus": true,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "first_published_at": "2020-03-11T07:47:06.468Z",
+        "last_published_at": "2020-09-02T22:05:56.817Z",
+        "latest_revision_created_at": "2020-09-02T22:05:56.760Z",
+        "live_revision": 28
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 5,
+    "fields": {
+        "path": "000100010002",
+        "depth": 3,
+        "numchild": 0,
+        "title": "Serveur discord",
+        "draft_title": "Serveur discord",
+        "slug": "discord",
+        "content_type": [
+            "home",
+            "flexiblepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/home/discord/",
+        "owner": [
+            "solarliner"
+        ],
+        "seo_title": "Discord",
+        "show_in_menus": true,
+        "search_description": "Serveur Discord CodeAnon",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "first_published_at": "2020-04-05T19:29:19.144Z",
+        "last_published_at": "2020-09-02T20:13:02.030Z",
+        "latest_revision_created_at": "2020-09-02T20:13:01.819Z",
+        "live_revision": 14
+    }
+},
+{
+    "model": "wagtailcore.page",
+    "pk": 6,
+    "fields": {
+        "path": "000100010003",
+        "depth": 3,
+        "numchild": 0,
+        "title": "Ann\u00e9e 2020-2021",
+        "draft_title": "Ann\u00e9e 2020-2021",
+        "slug": "ann\u00e9e-2020-2021",
+        "content_type": [
+            "home",
+            "flexiblepage"
+        ],
+        "live": true,
+        "has_unpublished_changes": false,
+        "url_path": "/home/ann\u00e9e-2020-2021/",
+        "owner": [
+            "ixxios"
+        ],
+        "seo_title": "",
+        "show_in_menus": true,
+        "search_description": "",
+        "go_live_at": null,
+        "expire_at": null,
+        "expired": false,
+        "locked": false,
+        "locked_at": null,
+        "locked_by": null,
+        "first_published_at": "2020-09-02T21:14:31.574Z",
+        "last_published_at": "2020-09-02T21:30:28.417Z",
+        "latest_revision_created_at": "2020-09-02T21:30:28.375Z",
+        "live_revision": 23
+    }
+},
+{
+    "model": "home.flexiblepage",
+    "pk": 4,
+    "fields": {
+        "subtitle": "Un bureau de passionn\u00e9s, pour vous !",
+        "content": "[{\"type\": \"rich_text\", \"value\": \"<h2>Qui sommes-nous ?</h2><p>L&#x27;association CodeAnon est localis\\u00e9 \\u00e0 l&#x27;universit\\u00e9 Paul Sabatier (Toulouse). Elle vit gr\\u00e2ce \\u00e0 l&#x27;implication remarquable des membres de son bureau qui investissent g\\u00e9n\\u00e9reusement du temps pour proposer un contenu de qualit\\u00e9 aux passionn\\u00e9s d&#x27;informatique du campus.<br/><br/></p><h3>Un ou deux mots du Staff</h3><h3></h3><ul><li>Arthur Correnson (<a href=\\\"mailto:arthur.correnson@ens-rennes.fr\\\">arthur.correnson@ens-rennes.fr</a>) :<ul><li>Je suis passionn\\u00e9 d&#x27;informatique fondamentale. Je m&#x27;int\\u00e9resse aux liens forts qui existent entre logique math\\u00e9matique et langages de programmation. En particulier, je m&#x27;int\\u00e9resse \\u00e0 des langages de programmation qui permettent d&#x27;\\u00e9crire des preuves math\\u00e9matiques et des programmes dont la correction est prouv\\u00e9e. Au sein de l&#x27;association, j&#x27;organise les conf\\u00e9rences du Mardi o\\u00f9 nous discutons g\\u00e9n\\u00e9ralement de langages bizarres (mais int\\u00e9ressants) tels qu&#x27;OCaml ou Coq.</li></ul></li><li>Nathan Graule (<a href=\\\"mailto:solarliner@gmail.com\\\">solarliner@gmail.com</a>)</li><li>0x5AD</li><li>Varga</li><li>Tarek</li><li>Antonin</li><li>Vincent</li><li>Eve</li><li>Lili</li></ul><p></p>\", \"id\": \"5751b608-5d9f-4ed0-9838-6ac0338f87cf\"}]"
+    }
+},
+{
+    "model": "home.flexiblepage",
+    "pk": 5,
+    "fields": {
+        "subtitle": "Nous avons un serveur officiel !",
+        "content": "[{\"type\": \"rich_text\", \"value\": \"<p>Le serveur discord de l&#x27;association est l&#x27;un des lieus phares de notre activit\\u00e9. Beaucoup de nouvelles, de discussions et de d\\u00e9bats y sont \\u00e9chang\\u00e9s. C&#x27;est donc un passage in\\u00e9vitable pour tous les int\\u00e9ress\\u00e9s !<br/></p><h2>C&#x27;est quoi Discord ?</h2><p><br/>Si vous ne connaissez pas encore discord, vous allez adorer ce qui va suivre. Discord est un outils de communication en ligne. Il propose des fonctionnalit\\u00e9s de discussion par \\u00e9crit, par oral et par vid\\u00e9o (un peu comme Skype). Mais Discord a une grande particularit\\u00e9 qui le diff\\u00e9rencie des autres services du m\\u00eame type : son fonctionnement par serveur. L\\u00e0 ou un logiciel tel que Skype va proposer des discussions instantan\\u00e9es, Discord propose un syst\\u00e8me de salons permettant de faire persister les \\u00e9changes. Par ailleurs, nul besoin de lancer un appel pour commencer une discussion, il suffit simplement de se connecter dans un salon de discussion audio et d&#x27;attendre d&#x27;\\u00eatre rejoint par les autres membres du serveur !<br/></p><p><a href=\\\"https://discord.gg/bf7TABb\\\">Rejoins nous !</a><br/><br/>Attention, le lien pr\\u00e9c\\u00e9dent ne donne pas d&#x27;acc\\u00e8s permanent au serveur. Pour devenir membre, les administrateurs de l&#x27;association vous contacterons d\\u00e9s votre arriv\\u00e9. N&#x27;h\\u00e9sitez pas \\u00e0 envoyer un mail \\u00e0 l&#x27;adresse mail <a href=\\\"mailto:contact@codeanon.org\\\">contact@codeanon.org</a> en cas de probl\\u00e8me ou de question, l&#x27;\\u00e9quipe se fera une joie de vous aider.<br/></p>\", \"id\": \"bcf3df08-591f-441f-b78d-36a52ff24c5f\"}]"
+    }
+},
+{
+    "model": "home.flexiblepage",
+    "pk": 6,
+    "fields": {
+        "subtitle": "D\u00e9roulement de l'ann\u00e9e universitaire",
+        "content": "[{\"type\": \"rich_text\", \"value\": \"<h2>Pr\\u00e9sentation de l&#x27;ann\\u00e9e</h2><p>L&#x27;ann\\u00e9e universitaire 2020-2021 a commenc\\u00e9 et Il n&#x27;aura \\u00e9chapp\\u00e9 \\u00e0 personne que les conditions d&#x27;\\u00e9tudes vont \\u00eatre un peu particuli\\u00e8res cette ann\\u00e9e. Les associations \\u00e9tudiantes sont les premi\\u00e8re concern\\u00e9es !<br/>Heureusement, c&#x27;est aussi l&#x27;occasion pour nous de se r\\u00e9-inventer. L&#x27;\\u00e9quipe de CodeAnon a travaill\\u00e9 tout l&#x27;\\u00e9t\\u00e9 pour d\\u00e9velopper sa pr\\u00e9sence 100% num\\u00e9rique ! Blog, ateliers en ligne, tutoriaux vid\\u00e9os, discussions Discord, il existe bien des outils pour continuer \\u00e0 vivre notre passion de l&#x27;informatique ! Aussi, nous invitons chaleureusement tous les membres \\u00e0 nous aider \\u00e0 entretenir et animer notre catalogue de ressources en ligne.<br/></p><h2>\\u00c9v\\u00e8nements</h2><p>Les ann\\u00e9es pass\\u00e9es, CodeAnon vivait majoritairement de deux types d&#x27;\\u00e9v\\u00e8nement. D&#x27;une part les conf\\u00e9rences du Mardi soir o\\u00f9 des \\u00e9tudiants animaient des pr\\u00e9sentations autour de th\\u00e9matiques cibl\\u00e9es en informatique; ces conf\\u00e9rences \\u00e9taient g\\u00e9n\\u00e9ralement compl\\u00e9ment\\u00e9es par un atelier de programmation qui illustrait les concepts abord\\u00e9s. D&#x27;autre part, les ateliers cybers\\u00e9curit\\u00e9 du Jeudi dans lesquels \\u00e9taient propos\\u00e9 une v\\u00e9ritable formation pratique aux techniques de <i>hacking.</i> Bien entendu, un tel mod\\u00e8le d&#x27;\\u00e9v\\u00e8nement en pr\\u00e9sentiel est inconcevable pour le moment. Mais cela ne signe pas l&#x27;arr\\u00eat de l&#x27;activit\\u00e9 pour autant ! Bien au contraire, ces ateliers seront de nouveau organis\\u00e9s cette ann\\u00e9e mais simplement sous une autre forme ! D&#x27;ailleurs, nous pr\\u00e9voyons m\\u00eame une hausse significative du nombre des participants. Bien au chaud derri\\u00e8re son PC, plus d&#x27;excuse pour ne pas assister aux ateliers <b>en ligne</b> ou aux conf\\u00e9rences <b>en live</b> !<br/><br/></p><h2>Pr\\u00e9sence num\\u00e9rique</h2><p>Vous l&#x27;aurez compris, cette ann\\u00e9e la vie de l&#x27;association se d\\u00e9roulera essentiellement <b>en ligne.</b> Mais \\u00e7a veut dire quoi exactement ?<br/>Nous pr\\u00e9voyons de concentrer l&#x27;activit\\u00e9 de CodeAnon sur 3 p\\u00f4les principalement :</p><ol><li><b>Le blog</b> : Il s&#x27;agit d&#x27;une plateforme de lecture/\\u00e9criture d&#x27;articles scientifiques. Tous les membres sont invit\\u00e9s \\u00e0 soumettre leurs propositions d&#x27;articles d\\u00e9s lors que le sujet vous semble pertinent et pr\\u00e9sente un int\\u00e9r\\u00eat p\\u00e9dagogique dans les disciplines math\\u00e9matiques ou informatique.</li><li><b>Le Discord :</b> C&#x27;est la plaque tournante de CodeAnon. Toutes les informations cruciales y sont diffus\\u00e9e. C&#x27;est aussi l\\u00e0 que se retrouve le plus grand nombre de membres (environ 156 membres)</li><li><b>La cha\\u00eene YouTube :</b> C&#x27;est la grande nouveaut\\u00e9 de l&#x27;ann\\u00e9e ! Des lives seront organis\\u00e9s r\\u00e9guli\\u00e8rement et de nombreuses vid\\u00e9os sont d\\u00e9j\\u00e0 pr\\u00e9vues ! N&#x27;h\\u00e9sitez pas \\u00e0 <a href=\\\"https://www.youtube.com/channel/UCy8iS4kdRQl-onovb5LiCCg\\\">vous y abonner</a>.<br/></li></ol><h2>Comment participer ?<br/></h2><p>Le calendrier des \\u00e9v\\u00e8nements sera diffus\\u00e9 tr\\u00e8s prochainement. D&#x27;ici l\\u00e0, le meilleur moyen de se tenir informer est de rejoindre notre <a id=\\\"5\\\" linktype=\\\"page\\\">serveur discord</a> ! Nous y publions quotidiennement des nouvelles.<br/>N&#x27;h\\u00e9sitez pas \\u00e9galement \\u00e0 nous faire part de vos envies, de vos id\\u00e9es, de vos projets de recherche ou de programmation en nous contactant \\u00e0 l&#x27;adresse <a href=\\\"mailto:contact@codeanon.org\\\">contact@codeanon.org</a>.</p><h2>Note(s) aux nouveaux arrivants</h2><p>Vous \\u00eates nouvellement \\u00e9tudiant.e \\u00e0 l&#x27;universit\\u00e9 Paul Sabatier et vous vous passionnez pour l&#x27;informatique ? Vous avez entendu parler de l&#x27;association CodeAnon et souhaitez nous rejoindre ?<br/>Vous avez des id\\u00e9es de projets d&#x27;informatique ambitieux et vous cherchez des conseils techniques ? Cette section est faite pour vous !<br/><br/>Pour nous rejoindre, rien de plus simple ! Tout d&#x27;abord, n&#x27;h\\u00e9sitez pas \\u00e0 vous manifester sur le <a id=\\\"5\\\" linktype=\\\"page\\\">serveur discord</a>. Si l&#x27;ambiance vous pla\\u00eet et que vous souhaitez prendre part \\u00e0 la vie de l&#x27;association, alors l&#x27;\\u00e9tape suivante et de remplir le formulaire d&#x27;adh\\u00e9sion. Il vous sera distribu\\u00e9 par les membres du Staff directement sur le campus. Encore une fois, n&#x27;h\\u00e9sitez pas \\u00e0 nous solliciter par mail ou via discord pour de plus amples informations ! Le remplissage du formulaire d&#x27;adh\\u00e9sion s&#x27;accompagne du r\\u00e8glement de la modique somme de 5 euros. Cette cotisation permet \\u00e0 l&#x27;association de financer les projets et de proposer \\u00e0 un maximum d&#x27;\\u00e9tudiant des ateliers de qualit\\u00e9. Sans vous, nous n&#x27;existons pas !<br/><br/></p>\", \"id\": \"d3c1902b-bd9b-4211-9427-73901299b91b\"}]"
+    }
+},
+{
+    "model": "home.homepage",
+    "pk": 3,
+    "fields": {
+        "content": "[{\"type\": \"rich_text\", \"value\": \"<h2>Pr\\u00e9sentation de l&#x27;association</h2><p>CodeAnon est une association \\u00e9tudiante dont l\\u2019objectif est de promouvoir les sciences informatiques. De la cybers\\u00e9curit\\u00e9 \\u00e0 l\\u2019informatique fondamentale, l\\u2019association couvre un spectre large de th\\u00e9matiques en proposant des ateliers, des conf\\u00e9rences et des projets aux \\u00e9tudiants de tous horizons.</p><h2>Valeurs</h2><p>Fervents d\\u00e9fenseurs du logiciel libre, les membres de l\\u2019association CodeAnon encadrent et soutiennent le d\\u00e9veloppement de diff\\u00e9rents logiciels et outils open-source. De nouveaux contributeurs ainsi que de nouvelles propositions de projets sont toujours les bienvenues.<br/></p><p>L\\u2019accent est mis sur le transfert et le partage de connaissances. Qu\\u2019il s\\u2019agisse d\\u2019entraide, d\\u2019\\u00e9changes techniques ou de questions cibl\\u00e9es, l\\u2019association CodeAnon doit \\u00eatre un cadre convivial pour l\\u2019apprentissage des sciences informatiques.</p><p></p><p>L\\u2019activit\\u00e9 de CodeAnon se traduit essentiellement par l\\u2019organisation de conf\\u00e9rences hebdomadaires autour de th\\u00e9matiques vari\\u00e9es en lien avec l\\u2019informatique. \\u00c0 ces pr\\u00e9sentations, faites par des \\u00e9tudiants, s\\u2019ajoutent \\u00e9galement des ateliers de programmation r\\u00e9guliers.<br/><br/></p><h2>Pourquoi CodeAnon ?</h2><p>L&#x27;association CodeAnon est n\\u00e9e du projet fou d&#x27;une poign\\u00e9e de passionn\\u00e9s d&#x27;informatique. Tous issus de formations diff\\u00e9rentes et int\\u00e9ress\\u00e9s par des th\\u00e9matiques diff\\u00e9rentes, ils \\u00e9taient anim\\u00e9s par les m\\u00eame id\\u00e9aux de partage et de transmission des connaissances. Par ailleurs, il est parfois difficile au sein des grandes universit\\u00e9 de trouver une place pour exprimer sa cr\\u00e9ativit\\u00e9 et d\\u00e9velopper des projets ambitieux dans une discipline donn\\u00e9e. L&#x27;association CodeAnon a donc \\u00e9t\\u00e9 fond\\u00e9e dans le double but de servir d&#x27;espace de partage d&#x27;entraide et d&#x27;\\u00e9change autour des sciences informatique, mais \\u00e9galement avec un objectif de servir de laboratoire \\u00e9tudiant et d&#x27;interface avec les enseignants du d\\u00e9partement d&#x27;informatique. Par l&#x27;interm\\u00e9diaire de l&#x27;association, certains projets d&#x27;informatique ont pu \\u00eatre soutenu et encadr\\u00e9 par des enseignants de l&#x27;Institut de Recherche en Informatique de Toulouse. Nous en sommes aujourd&#x27;hui tr\\u00e8s fi\\u00e8res et esp\\u00e9rons continuer ce type de collaboration.<br/></p>\", \"id\": \"7eefa76a-f8e6-47c2-8ec9-480d9cd8baba\"}]"
+    }
+}
+]
