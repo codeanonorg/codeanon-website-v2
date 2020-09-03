@@ -10,5 +10,6 @@ build:
 release:
   command:
     - ./docker_entry.sh true
+  image: web
 run:
   web: gunicorn codeanon.wsgi:application --workers=3 --bind=0.0.0.0:$PORT
