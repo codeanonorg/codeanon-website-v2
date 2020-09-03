@@ -23,7 +23,7 @@ class BasePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["menu"] = self.get_root().get_children().filter(live=True, show_in_menus=True)
+        context["menu"] = self.get_root().get_children().first().get_children().filter(live=True, show_in_menus=True)
         return context
 
 
