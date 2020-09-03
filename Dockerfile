@@ -1,6 +1,8 @@
 ARG ENV=dev
 FROM node:alpine as node
 
+RUN apk update && apk --no-cache add build-base python2 libsass
+
 WORKDIR /code/
 COPY ./yarn.lock /code
 COPY ./package.json /code
