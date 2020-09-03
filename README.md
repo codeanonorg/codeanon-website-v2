@@ -32,7 +32,10 @@ The style files are written in Sass and are available in [/codeanon/static/css](
 
 ### More resources
 
-- 
+- [Django documentation](https://docs.djangoproject.com/en/3.1/)
+- [Wagtail documentation](https://docs.wagtail.io/en/stable/)
+- [Bulma](https://bulma.io/)
+- [Sass](https://sass-lang.com/)
 
 ## Deployment
 
