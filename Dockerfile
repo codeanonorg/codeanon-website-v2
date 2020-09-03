@@ -53,6 +53,7 @@ LABEL maintainer="solarliner@gmail.com"
 
 # Set environment varibles
 ARG ENV
+ARG PORT=8000
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_ENV ${ENV}
 ENV DJANGO_SETTINGS_MODULE codeanon.settings.${ENV}
@@ -67,5 +68,5 @@ RUN pip install --no-cache /wheels/*
 RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
-EXPOSE 8000
-CMD ["./docker_entry.sh", "gunicorn", "codeanon.wsgi:application", "--workers=3", "--bind=0.0.0.0:8000"]
+EXPOSE ${PORT}
+CMD ["./docker_entry.sh", "gunicorn", "codeanon.wsgi:application", "--workers=3", "--bind=0.0.0.0:${PORT}"]
