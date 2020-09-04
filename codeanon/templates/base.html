@@ -3,33 +3,36 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>
-    {% block title %}
-      {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-    {% endblock %}
-    {% block title_suffix %}
-      {% with self.get_site.site_name as site_name %}
-        {% if site_name %}- {{ site_name }}{% endif %}
-      {% endwith %}
-    {% endblock %}
-  </title>
-  <link rel="icon" href="{% static "img/favicon.ico" %}"/>
-  <meta name="description" content=""/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/>
+    <title>
+        {% block title %}
+            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+            {% with self.get_site.site_name as site_name %}
+                {% if site_name %}- {{ site_name }}{% endif %}
+            {% endwith %}
+        {% endblock %}
+    </title>
+    <link rel="icon" href="{% static "img/favicon.ico" %}"/>
+    {% if self.description %}
+        <meta name="description" content="{{ self.search_description }}"/>
+    {% endif %}
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  {# Global stylesheets #}
-  <link rel="stylesheet" href="{% sass_src "css/bulma/codeanon.scss" %}">
+    {# Global stylesheets #}
+    <link rel="stylesheet" href="{% sass_src "css/bulma/codeanon.scss" %}">
 
-  {% block extra_css %}
-    {# Override this in templates to add extra stylesheets #}
-  {% endblock %}
+    {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
 {% block header %}
-  {% include "include/header.html" %}
+    {% include "include/header.html" %}
 {% endblock %}
 {% if messages %}
     <div class="section">
@@ -46,12 +49,12 @@
 {% block content %}{% endblock %}
 
 {% block footer %}
-  {% include "include/footer.html" %}
+    {% include "include/footer.html" %}
 {% endblock %}
 {# Global javascript #}
 <script type="text/javascript" src="{% static 'js/codeanon.js' %}"></script>
 {% block extra_js %}
-  {# Override this in templates to add extra javascript #}
+    {# Override this in templates to add extra javascript #}
 {% endblock %}
 </body>
 </html>
