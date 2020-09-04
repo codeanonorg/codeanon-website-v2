@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load wagtailcore_tags %}
 
 {% block body_class %}layout col-light{% endblock %}
 {% block content %}
@@ -12,7 +13,9 @@
   </section>
   <section class="section">
     {% for block in self.content %}
-      <div class="container content">{{ block }}</div>
+      <div class="container content">
+        {% include_block block %}
+      </div>
     {% endfor %}
   </section>
 {% endblock %}

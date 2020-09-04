@@ -1,0 +1,14 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+<div class="box">
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <strong style="font-size: 1.1em">{{ self.name }}</strong><br/>
+                <span>{{ self.position }}</span><br/>
+                <small><a href="mailto:{{ self.email }}">{{ self.email }}</a></small>
+                {{ self.bio | richtext }}
+            </div>
+        </div>
+    </article>
+</div>

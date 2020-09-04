@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.loader import render_to_string, get_template
+from django.utils.safestring import mark_safe
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -11,10 +13,31 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.core import fields, blocks
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class FormField(AbstractFormField):
     page = ParentalKey("home.EmailFormPage", related_name="form_fields")
+
+
+class PersonBlock(blocks.StructBlock):
+    class Meta:
+        icon = "user"
+        label = "Person"
+        template = "home/blocks/person.html"
+    name = blocks.CharBlock(required=True)
+    position = blocks.CharBlock(required=True)
+    email = blocks.EmailBlock(required=False)
+    bio = blocks.RichTextBlock(required=True, features=["bold", "italic"])
+
+
+class TrombinoscopeBlock(blocks.StructBlock):
+    class Meta:
+        icon = "user"
+        label = "Trombinoscope"
+        template = "home/blocks/trombinoscope.html"
+
+    cards = blocks.ListBlock(PersonBlock())
 
 
 class BasePage(Page):
@@ -29,6 +52,7 @@ class BasePage(Page):
 
 class HomePage(BasePage):
     template = "home/landing_page.html"
+    max_count = 1
     content_panels = Page.content_panels + [
         StreamFieldPanel("content"),
     ]
@@ -49,7 +73,7 @@ class FlexiblePage(BasePage):
 
     subtitle = models.CharField(max_length=140, blank=True, null=True)
     content = fields.StreamField(
-        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock())],
+        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock()), ("person", TrombinoscopeBlock())],
         blank=True,
         null=True,
     )
