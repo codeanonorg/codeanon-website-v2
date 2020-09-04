@@ -33,10 +33,10 @@
 			{% else %}
 			<div class="navbar-end">
 				<div class="navbar-item"><a href="{% url "login" %}" {% if request.path == login_url %}
-						class="border-bottom" {% endif %}>Login</a></div>
-				<div class="navbar-item"><a href="/">Home</a></div>
-				<div class="navbar-item"><a href="{% url "register" %}" {% if request.path == register_url %}
-						class="border-bottom" {% endif %}>Register</a></div>
+						class="border-bottom" {% endif %}>Se connecter</a></div>
+                <div class="navbar-item"><a href="/">Accueil</a></div>
+                <div class="navbar-item"><a href="{% url "register" %}" {% if request.path == register_url %}
+						class="border-bottom" {% endif %}>S'enregister</a></div>
 			</div>
 			{% endif %}
 		</div>
