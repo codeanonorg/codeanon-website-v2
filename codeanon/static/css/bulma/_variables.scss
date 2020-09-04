@@ -12,8 +12,11 @@ $primary: $orange !default;
 
 $info-invert: #fff;
 
-$family-primary: 'Space Mono', 'Courier New', Courier, monospace;
-$code-family: $family-primary;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans&display=swap');
+
+$code-family: 'Space Mono', 'Courier New', Courier, monospace;
+$family-primary: 'Work Sans', sans-serif;
+$header-family: $code-family;
 
 $thickness: 4px;
 
@@ -36,3 +39,6 @@ $text-strong: darken($text, 10);
 $text-invert: findColorInvert($text);
 $link: $orange;
 $link-invert: findColorInvert($orange);
+$link-hover: lighten(saturate($link, 10), 10);
+
+$border: $scheme-main-bis;
