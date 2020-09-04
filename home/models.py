@@ -1,6 +1,4 @@
 from django.db import models
-from django.template.loader import render_to_string, get_template
-from django.utils.safestring import mark_safe
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -13,7 +11,6 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.core import fields, blocks
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
-from wagtail.images.blocks import ImageChooserBlock
 
 
 class FormField(AbstractFormField):
@@ -25,6 +22,7 @@ class PersonBlock(blocks.StructBlock):
         icon = "user"
         label = "Person"
         template = "home/blocks/person.html"
+
     name = blocks.CharBlock(required=True)
     position = blocks.CharBlock(required=True)
     email = blocks.EmailBlock(required=False)
@@ -57,7 +55,8 @@ class HomePage(BasePage):
         StreamFieldPanel("content"),
     ]
     content = fields.StreamField(
-        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock())],
+        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock()),
+         ("trombinoscope", TrombinoscopeBlock())],
         blank=True,
         null=True,
     )

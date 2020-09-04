@@ -29,7 +29,7 @@
 			{% if user.is_authenticated %}
 			<div class="navbar-end">
 				<div class="navbar-item"><a href="{% url "logout" %}" class="underline">/logout</a></div>
-				<div class="navbar-item">[<span>{{ user.username }}</span>@CodeAnon {{ request.path }}]$</div>
+				<div class="navbar-item profilebar">[<span>{{ user.username }}</span>@codeanon {{ request.path }}]$</div>
 			</div>
 			{% else %}
 			<div class="navbar-end">
