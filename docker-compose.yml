@@ -3,12 +3,14 @@ version: '3.1'
 services:
   web:
     ports:
-      - ${PORT:-8080}:8000
+      - ${PORT:-8080}:${PORT:-8080}
     build:
       context: .
       args:
+        PORT: ${PORT:-8080}
         ENV: ${ENV:-dev}
     environment:
+      PORT: ${PORT:-8080}
       DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
       SECRET_KEY: ${SECRET_KEY:?Django secret key}
       DJANGO_HOST: ${DJANGO_HOST:?Server public host address}

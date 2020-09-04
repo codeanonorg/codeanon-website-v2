@@ -64,6 +64,7 @@ COPY . /code/
 COPY --from=node /code/node_modules /code/node_modules
 COPY --from=builder /wheels /wheels
 RUN pip install --no-cache /wheels/*
+RUN rm -rf /wheels
 
 RUN SECRET_KEY="tempkey" sh -c "\
     python manage.py compilescss && \
