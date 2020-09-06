@@ -8,27 +8,35 @@
 
 <link rel="stylesheet" type="text/css" href='{% static "blog/css/monokai.css"%}'>
 
-<h1>{{ page.title }}</h1>
-
-<p class="meta"></p>
-
-<div class="intro">{{ page.intro }}</div>
-
-{% for block in page.body %}
-{% if block.block_type == "code" %}
-{{ block.value.code }}
-{% if block.value.caption %}
-<!-- Caption -->
-<figcaption>
-  Bla
-  {{ block.value.caption }}
-</figcaption>
-{% endif %}
-{% else %}
-{{ block.value }}
-{% endif %}
-{% endfor %}
-
-<p><a href="{{page.get_parent.url}}">Return to blog</a></p>
+<section class="hero is-medium">
+  <main class="hero-body">
+    <div class="container">
+      <h1 class="title">{{ self.title }}</h1>
+      <div class="container content">
+        <h2>Author(s)</h2>
+        {% for author in self.authors %}
+        <p>{{ author.value.name }}(<a href="mailto: {{ author.value.email }}">{{ author.value.email }}</a>)</p>
+        {% endfor %}
+      </div>
+      <div class="container content">
+        <p class="subtitle">{{ self.intro|richtext }}</p>
+      </div>
+      {% for block in page.content %}
+      {% if block.block_type == "code" %}
+      <div class="code_block">
+        {{ block.value.code }}
+        {% if block.value.caption %}
+        <figcaption>
+          {{ block.value.caption }}
+        </figcaption>
+        {% endif %}
+      </div>
+      {% else %}
+      {{ block.value }}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </main>
+</section>
 
 {% endblock %}
