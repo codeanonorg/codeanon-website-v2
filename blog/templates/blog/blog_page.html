@@ -1,45 +1,42 @@
 {% extends "base.html" %}
+{% load sass_tags %}
 
 {% load wagtailcore_tags %}
 {% load static %}
 {% block body_class %}template-blogpage{% endblock %}
 
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href='{% static "blog/css/monokai.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% sass_src "blog/scss/blog_page.scss" %}'>
+{% endblock %}
+
 {% block content %}
-
-<link rel="stylesheet" type="text/css" href='{% static "blog/css/monokai.css"%}'>
-<link rel="stylesheet" type="text/css" href='{% static "blog/css/blog_page.css"%}'>
-
-<section class="hero is-medium">
-  <main class="hero-body">
-    <div class="container">
-      <h1 class="title">{{ self.title }}</h1>
-      <div class="container content">
-        <h2>Author(s)</h2>
-        {% for author in self.authors %}
-        <p>{{ author.value.name }}(<a href="mailto: {{ author.value.email }}">{{ author.value.email }}</a>)</p>
-        {% endfor %}
-      </div>
-      <div class="container content">
-        <p class="subtitle">{{ self.intro|richtext }}</p>
-      </div>
-      {% for block in page.content %}
-      <div class="container content">
-        {% if block.block_type == "code" %}
-        <div class="code_block">
-          {{ block.value.code }}
-          {% if block.value.caption %}
-          <figcaption>
-            {{ block.value.caption }}
-          </figcaption>
-          {% endif %}
+  <header class="hero is-medium">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ self.title }}</h1>
+        <p>
+          {% for author in self.authors.all %}
+            {% if not forloop.first and not forloop.last %}
+              ,&nbsp;
+            {% elif forloop.last %}
+              &nbsp;&amp;&nbsp;
+            {% endif %}
+            <a href="mailto:{{ author.email }}">{{ author.name }}</a>
+          {% endfor %}, le {{ self.first_published_at | date }}
+        </p>
+        <div class="container margin-top">
+          <p class="subtitle">{{ self.intro|richtext }}</p>
         </div>
-        {% else %}
-        {{ block.value }}
-        {% endif %}
       </div>
-      {% endfor %}
     </div>
-  </main>
-</section>
-
+  </header>
+  <section class="section">
+    {% for block in page.content %}
+      <div class="container content">
+        {% include_block block %}
+      </div>
+    {% endfor %}
+  </section>
 {% endblock %}
