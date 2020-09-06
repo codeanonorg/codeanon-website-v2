@@ -7,6 +7,7 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href='{% static "blog/css/monokai.css"%}'>
+<link rel="stylesheet" type="text/css" href='{% static "blog/css/blog_page.css"%}'>
 
 <section class="hero is-medium">
   <main class="hero-body">
@@ -22,18 +23,20 @@
         <p class="subtitle">{{ self.intro|richtext }}</p>
       </div>
       {% for block in page.content %}
-      {% if block.block_type == "code" %}
-      <div class="code_block">
-        {{ block.value.code }}
-        {% if block.value.caption %}
-        <figcaption>
-          {{ block.value.caption }}
-        </figcaption>
+      <div class="container content">
+        {% if block.block_type == "code" %}
+        <div class="code_block">
+          {{ block.value.code }}
+          {% if block.value.caption %}
+          <figcaption>
+            {{ block.value.caption }}
+          </figcaption>
+          {% endif %}
+        </div>
+        {% else %}
+        {{ block.value }}
         {% endif %}
       </div>
-      {% else %}
-      {{ block.value }}
-      {% endif %}
       {% endfor %}
     </div>
   </main>
