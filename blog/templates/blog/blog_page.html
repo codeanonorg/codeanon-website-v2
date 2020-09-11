@@ -19,12 +19,12 @@
         <p>
           {% for author in self.authors.all %}
             {% if not forloop.first and not forloop.last %}
-              ,&nbsp;
-            {% elif forloop.last %}
-              &nbsp;&amp;&nbsp;
+              ,
+            {% elif not forloop.first and forloop.last %}
+              &amp;
             {% endif %}
-            <a href="mailto:{{ author.email }}">{{ author.name }}</a>
-          {% endfor %}, le {{ self.first_published_at | date }}
+            <a href="mailto:{{ author.email }}">{{ author }}</a>{% comment %} Need to comment out the whitespace before the comma lmao
+          {% endcomment %}{% endfor %}, le {{ self.first_published_at | date }}
         </p>
         <div class="container margin-top">
           <p class="subtitle">{{ self.intro|richtext }}</p>

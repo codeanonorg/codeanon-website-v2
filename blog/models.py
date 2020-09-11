@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from modelcluster.fields import ParentalKey
 
@@ -36,13 +37,14 @@ class BlogIndexPage(Page):
 
 class BlogAuthor(Orderable):
     page = ParentalKey("blog.BlogPage", related_name="authors")
-    name = models.CharField(default="Anonymous", max_length=50)
-    email = models.EmailField(null=True, blank=True)
+    user = models.ForeignKey(get_user_model(), related_name="+", on_delete=models.PROTECT)
 
     panels = [
-        FieldPanel("name"),
-        FieldPanel("email")
+        FieldPanel("user")
     ]
+
+    def __str__(self):
+        return self.user.get_full_name()
 
 
 class BlogPage(Page):
