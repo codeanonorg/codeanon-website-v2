@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+
+<section class="hero is-medium">
+  <main class="hero-body">
+    <div class="container">
+      <h1 class="title">{{ self.title }}</h1>
+      <div class="container content">
+        <p class="subtitle">{{ self.intro|richtext }}</p>
+      </div>
+      {% for post in articles %}
+      <div class="container content">
+        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+        {{ post.specific.intro }}
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</section>
+
+{% endblock %}

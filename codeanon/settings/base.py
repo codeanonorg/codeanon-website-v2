@@ -28,6 +28,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     "home",
     "search",
+    "blog",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.routable_page",
@@ -69,7 +70,7 @@ ROOT_URLCONF = "codeanon.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(PROJECT_DIR, "templates"),],
+        "DIRS": [os.path.join(PROJECT_DIR, "templates"), ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -98,10 +99,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -173,7 +175,7 @@ BASE_URL = "http://codeanon.org"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {"console": {"class": "logging.StreamHandler",},},
+    "handlers": {"console": {"class": "logging.StreamHandler", }, },
     "loggers": {
         "django": {
             "handlers": ["console"],
@@ -181,3 +183,28 @@ LOGGING = {
         },
     },
 }
+
+WAGTAIL_CODE_BLOCK_LANGUAGES = (
+    ('cpp', 'C++'),
+    ('c', 'C'),
+    ('java', 'Java'),
+    ('ocaml', 'OCaml'),
+    ('haskell', 'Haskell'),
+    ('rust', 'Rust'),
+    ('python3', 'Python 3'),
+    ('bash', 'Bash/Shell'),
+    ('javascript', 'Javascript'),
+    ('css', "CSS"),
+    ('html', "HTML"),
+    ('julia', "Julia"),
+    ('nginx', "Nginx configuration file"),
+    ('numpy', "NumPy"),
+    ('django', "Django"),
+    ('jinja', "Jinja"),
+    ('docker', "Docker"),
+    ('jinja', "Jinja"),
+    ('yaml', "YAML"),
+    ('json', "JSON"),
+    ('plpgsql', "PL/pgSQL"),
+    ('psql', "PostgreSQL console (psql)"),
+)

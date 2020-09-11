@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+
+{% load wagtailcore_tags %}
+{% load static %}
+{% block body_class %}template-blogpage{% endblock %}
+
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href='{% static "blog/css/monokai.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% sass_src "blog/scss/blog_page.scss" %}'>
+{% endblock %}
+
+{% block content %}
+  <header class="hero is-medium">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ self.title }}</h1>
+        <p>
+          {% for author in self.authors.all %}
+            {% if not forloop.first and not forloop.last %}
+              ,
+            {% elif not forloop.first and forloop.last %}
+              &amp;
+            {% endif %}
+            <a href="mailto:{{ author.email }}">{{ author }}</a>{% comment %} Need to comment out the whitespace before the comma lmao
+          {% endcomment %}{% endfor %}, le {{ self.first_published_at | date }}
+        </p>
+        <div class="container margin-top">
+          <p class="subtitle">{{ self.intro|richtext }}</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="section">
+    {% for block in page.content %}
+      <div class="container content">
+        {% include_block block %}
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

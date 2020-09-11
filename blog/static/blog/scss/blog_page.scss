@@ -1,0 +1,18 @@
+@import "codeanon/static/css/bulma/variables";
+
+.code-block {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: $text-strong;
+  text-align: left;
+
+  & figcaption {
+    margin-top: -1em;
+    font-style: italic;
+    text-align: center;
+    &::before {
+      content: "Listing: ";
+    }
+  }
+}

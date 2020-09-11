@@ -3,7 +3,7 @@
 @import "bulma/sass/utilities/all";
 @import "glitch";
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $header-family;
   font-weight: bold;
 }
@@ -409,4 +409,12 @@ table {
 
 .profilebar {
   font-family: $code-family;
+}
+
+.content p {
+  font-size: 1.1rem;
+  max-width: 60rem;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
 }
