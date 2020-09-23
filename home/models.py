@@ -48,21 +48,32 @@ class BasePage(Page):
         return context
 
 
-class HomePage(BasePage):
-    template = "home/landing_page.html"
-    max_count = 1
-    content_panels = Page.content_panels + [
-        StreamFieldPanel("content"),
+class ContentPageBase(BasePage):
+    class Meta:
+        abstract = True
+
+    content_panels = BasePage.content_panels + [
+        StreamFieldPanel("content")
     ]
+    template = "home/content_page_base.html"
+
     content = fields.StreamField(
-        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock()),
-         ("trombinoscope", TrombinoscopeBlock())],
+        [
+            ("rich_text", blocks.RichTextBlock(template="home/blocks/rich_text.html")),
+            ("raw_html", blocks.RawHTMLBlock()),
+            ("trombinoscope", TrombinoscopeBlock()),
+        ],
         blank=True,
         null=True,
     )
 
 
-class FlexiblePage(BasePage):
+class HomePage(ContentPageBase):
+    template = "home/landing_page.html"
+    max_count = 1
+
+
+class FlexiblePage(ContentPageBase):
     template = "home/flexible_page.html"
     subpage_types = ["home.FlexiblePage"]
     content_panels = Page.content_panels + [
@@ -71,11 +82,6 @@ class FlexiblePage(BasePage):
     ]
 
     subtitle = models.CharField(max_length=140, blank=True, null=True)
-    content = fields.StreamField(
-        [("rich_text", blocks.RichTextBlock()), ("raw_html", blocks.RawHTMLBlock()), ("person", TrombinoscopeBlock())],
-        blank=True,
-        null=True,
-    )
 
 
 class EmailFormPage(AbstractEmailForm, BasePage):

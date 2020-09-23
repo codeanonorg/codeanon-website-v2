@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <section class="{% block header_class %}hero is-medium{% endblock %}" id="top">
+        {% block header_pre %}{% endblock %}
+        <main class="hero-body">
+            {% block header_title %}{% endblock %}
+        </main>
+        {% block header_post %}{% endblock %}
+    </section>
+    <section id="main" class="section">
+        {% for block in self.content %}
+            <div class="container">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}
