@@ -2,8 +2,7 @@ name: Docker
 
 on:
   push:
-    branches: all
-    # Publish `v1.2.3` tags as releases.
+    branches: '*'
     tags:
       - v*
 
