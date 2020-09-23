@@ -411,7 +411,7 @@ table {
   font-family: $code-family;
 }
 
-.content p {
+.content * {
   font-size: 1.1rem;
   max-width: 60rem;
   text-align: justify;
