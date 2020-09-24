@@ -1,20 +1,15 @@
-{% extends "base.html" %}
+{% extends "home/content_page_base.html" %}
 
 {% block body_class %}layout col-light{% endblock %}
-{% block content %}
-  <section class="hero is-fullheight-with-navbar" id="top">
-    <main class="hero-body">
-      <div class="container has-text-centered">
+
+{% block header_class %}hero is-fullheight-with-navbar{% endblock %}
+{% block header_title %}
+    <div class="container has-text-centered">
         <h1 class="glitch flicker-in" data-text="CodeAnon">CodeAnon</h1>
-      </div>
-    </main>
-    <div class="hero-foote has-text-centered">
-      <div class="fade-in-top arrow-container"><a href="#down"><i class="arrow-down"></i></a></div>
     </div>
-  </section>
-  <section id="down" class="section">
-    {% for block in self.content %}
-      <div class="container content">{{ block }}</div>
-    {% endfor %}
-  </section>
+{% endblock %}
+{% block header_post %}
+    <div class="hero-foot has-text-centered">
+        <div class="fade-in-top arrow-container"><a href="#main"><i class="arrow-down"></i></a></div>
+    </div>
 {% endblock %}
