@@ -1,7 +1,9 @@
 {% load wagtailcore_tags %}
 
-<div class="columns is-multiline">
-    {% for card in self.cards %}
-        <div class="column is-4-desktop is-6-tablet">{% include_block card %}</div>
-    {% endfor %}
+<div class="content">
+    <div class="columns is-multiline">
+        {% for card in self.cards %}
+            <div class="column is-6">{% include_block card %}</div>
+        {% endfor %}
+    </div>
 </div>
