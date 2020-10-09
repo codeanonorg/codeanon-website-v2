@@ -1,13 +1,5 @@
 [[package]]
 category = "main"
-description = "Red/black tree with support for fast accumulation of values in a key range"
-name = "accumulation-tree"
-optional = false
-python-versions = "*"
-version = "0.6.2"
-
-[[package]]
-category = "main"
 description = "Screen-scraping library"
 name = "beautifulsoup4"
 optional = false
@@ -316,17 +308,6 @@ version = "2.8.6"
 
 [[package]]
 category = "main"
-description = "Python exception notifier for Airbrake"
-name = "pybrake"
-optional = false
-python-versions = "*"
-version = "0.4.6"
-
-[package.dependencies]
-tdigest = "*"
-
-[[package]]
-category = "main"
 description = "Pygments is a syntax highlighting package written in Python."
 name = "pygments"
 optional = false
@@ -340,14 +321,6 @@ name = "pytz"
 optional = false
 python-versions = "*"
 version = "2020.1"
-
-[[package]]
-category = "main"
-description = "Generate pseudorandom numbers by using algebra"
-name = "pyudorandom"
-optional = false
-python-versions = "*"
-version = "1.0.0"
 
 [[package]]
 category = "main"
@@ -437,21 +410,6 @@ pandas = ["pandas"]
 xls = ["xlrd", "xlwt"]
 xlsx = ["openpyxl (>=2.6.0)"]
 yaml = ["pyyaml"]
-
-[[package]]
-category = "main"
-description = "T-Digest data structure"
-name = "tdigest"
-optional = false
-python-versions = "*"
-version = "0.5.2.2"
-
-[package.dependencies]
-accumulation-tree = "*"
-pyudorandom = "*"
-
-[package.extras]
-tests = ["pytest", "pytest-timeout", "pytest-cov", "numpy"]
 
 [[package]]
 category = "main"
@@ -571,14 +529,11 @@ python-versions = "*"
 version = "1.3.0"
 
 [metadata]
-content-hash = "2dd9c36f69803dc962d153da165850699eb8ab8ceb87d490074a5c892677c4b2"
+content-hash = "618d702b16c10c82b58f13b01a78563bdc4aa221b36ecabb0be504400f9fb0cd"
 lock-version = "1.0"
 python-versions = "^3.7,^3.8"
 
 [metadata.files]
-accumulation-tree = [
-    {file = "accumulation_tree-0.6.2.tar.gz", hash = "sha256:0de0f083ba56a82126d0af5940ba968264b201ab109b43581c6e709968417141"},
-]
 beautifulsoup4 = [
     {file = "beautifulsoup4-4.8.2-py2-none-any.whl", hash = "sha256:e1505eeed31b0f4ce2dbb3bc8eb256c04cc2b3b72af7d551a4ab6efd5cbe5dae"},
     {file = "beautifulsoup4-4.8.2-py3-none-any.whl", hash = "sha256:9fbb4d6e48ecd30bcacc5b63b94088192dcda178513b2ae3c394229f8911b887"},
@@ -756,9 +711,6 @@ psycopg2-binary = [
     {file = "psycopg2_binary-2.8.6-cp39-cp39-manylinux1_i686.whl", hash = "sha256:42ec1035841b389e8cc3692277a0bd81cdfe0b65d575a2c8862cec7a80e62e52"},
     {file = "psycopg2_binary-2.8.6-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:7312e931b90fe14f925729cde58022f5d034241918a5c4f9797cac62f6b3a9dd"},
 ]
-pybrake = [
-    {file = "pybrake-0.4.6.tar.gz", hash = "sha256:1e8f68199469044f8fc90dd3432cf5eca861c4221abb080c6959e75ab358b2e1"},
-]
 pygments = [
     {file = "Pygments-2.7.1-py3-none-any.whl", hash = "sha256:307543fe65c0947b126e83dd5a61bd8acbd84abec11f43caebaf5534cbc17998"},
     {file = "Pygments-2.7.1.tar.gz", hash = "sha256:926c3f319eda178d1bd90851e4317e6d8cdb5e292a3386aac9bd75eca29cf9c7"},
@@ -766,9 +718,6 @@ pygments = [
 pytz = [
     {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},
     {file = "pytz-2020.1.tar.gz", hash = "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"},
-]
-pyudorandom = [
-    {file = "pyudorandom-1.0.0.tar.gz", hash = "sha256:f30a093a0170c15f9c7f87eb29f71f0f5fde995528b7c6dc4606d389e8c37755"},
 ]
 rcssmin = [
     {file = "rcssmin-1.0.6.tar.gz", hash = "sha256:ca87b695d3d7864157773a61263e5abb96006e9ff0e021eff90cbe0e1ba18270"},
@@ -807,11 +756,6 @@ sqlparse = [
 tablib = [
     {file = "tablib-2.0.0-py3-none-any.whl", hash = "sha256:c5a77c96ad306d5b380def1309d521ad5e98b4f83726f84857ad87e142d13279"},
     {file = "tablib-2.0.0.tar.gz", hash = "sha256:8cc2fa10bc37219ac5e76850eb7fbd50de313c7a1a7895c44af2a8dd206b7be7"},
-]
-tdigest = [
-    {file = "tdigest-0.5.2.2-py2.py3-none-any.whl", hash = "sha256:e32ff6ab62e4defdb93b816c831080d94dfa1efb68a9fa1e7976c237fa9375cb"},
-    {file = "tdigest-0.5.2.2-py3-none-any.whl", hash = "sha256:dd25f8d6e6be002192bba9e4b8c16491d36c10b389f50637818603d1f67c6fb2"},
-    {file = "tdigest-0.5.2.2.tar.gz", hash = "sha256:8deffc8bac024761786f43d9444e3b6c91008cd690323e051f068820a7364d0e"},
 ]
 unidecode = [
     {file = "Unidecode-1.1.1-py2.py3-none-any.whl", hash = "sha256:1d7a042116536098d05d599ef2b8616759f02985c85b4fef50c78a5aaf10822a"},
