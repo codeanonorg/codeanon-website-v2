@@ -9,7 +9,8 @@ ALLOWED_HOSTS = [os.getenv("DJANGO_HOST", "127.0.0.1")]
 
 DEBUG = False
 
-AIRBRAKE["environment"] = "production"
+if "AIRBRAKE_PROJECT_KEY" in os.environ:
+    AIRBRAKE["environment"] = "production"
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 

@@ -63,7 +63,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    "pybrake.django.AirbrakeMiddleware",
 ]
 
 ROOT_URLCONF = "codeanon.urls"
@@ -104,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -175,28 +173,30 @@ BASE_URL = "http://codeanon.org"
 
 # Airbrake / Errbit logging
 
-AIRBRAKE = {
-    "host": os.environ.get("AIRBRAKE_HOST", "https://api.airbrake.io"),
-    "project_id": os.environ.get("AIRBRAKE_PROJECT_ID"),
-    "project_key": os.environ.get("AIRBRAKE_PROJECT_KEY"),
-}
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {"console": {"class": "logging.StreamHandler", }, "airbrake": {"class": "pybrake.LoggingHandler"}},
     "loggers": {
-        "app": {
-            "handlers": ["airbrake"],
-            "level": "INFO",
-            "propagate": True,
-        },
         "django": {
             "handlers": ["console"],
             "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
         },
     },
 }
+
+if "AIRBRAKE_PROJECT_KEY" in os.environ:
+    AIRBRAKE = {
+        "host": os.environ.get("AIRBRAKE_HOST", "https://api.airbrake.io"),
+        "project_id": os.environ.get("AIRBRAKE_PROJECT_ID", "1"),
+        "project_key": os.environ.get("AIRBRAKE_PROJECT_KEY"),
+    }
+    MIDDLEWARE.append("pybrake.django.AirbrakeMiddleware")
+    LOGGING["loggers"]["app"] = {
+        "handlers": ["airbrake"],
+        "level": "INFO",
+        "propagate": True,
+    }
 
 WAGTAIL_CODE_BLOCK_LANGUAGES = (
     ('cpp', 'C++'),
