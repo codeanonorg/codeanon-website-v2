@@ -176,7 +176,7 @@ BASE_URL = "http://codeanon.org"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {"console": {"class": "logging.StreamHandler", }, "airbrake": {"class": "pybrake.LoggingHandler"}},
+    "handlers": {"console": {"class": "logging.StreamHandler", }, },
     "loggers": {
         "django": {
             "handlers": ["console"],
