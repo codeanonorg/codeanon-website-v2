@@ -15,6 +15,9 @@ INSTALLED_APPS += ["debug_toolbar"]
 
 MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
+if "AIRBRAKE_PROJECT_KEY" in os.environ:
+    AIRBRAKE["environment"] = "development"
+
 try:
     from .local import *
 except ImportError:

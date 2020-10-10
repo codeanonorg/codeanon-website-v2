@@ -104,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -172,10 +171,12 @@ WAGTAIL_FRONTEND_LOGIN_TEMPLATE = LOGIN_URL
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "http://codeanon.org"
 
+# Airbrake / Errbit logging
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {"console": {"class": "logging.StreamHandler", }, },
+    "handlers": {"console": {"class": "logging.StreamHandler", }, "airbrake": {"class": "pybrake.LoggingHandler"}},
     "loggers": {
         "django": {
             "handlers": ["console"],
@@ -183,6 +184,19 @@ LOGGING = {
         },
     },
 }
+
+if "AIRBRAKE_PROJECT_KEY" in os.environ:
+    AIRBRAKE = {
+        "host": os.environ.get("AIRBRAKE_HOST", "https://api.airbrake.io"),
+        "project_id": os.environ.get("AIRBRAKE_PROJECT_ID", "1"),
+        "project_key": os.environ.get("AIRBRAKE_PROJECT_KEY"),
+    }
+    MIDDLEWARE.append("pybrake.django.AirbrakeMiddleware")
+    LOGGING["loggers"]["app"] = {
+        "handlers": ["airbrake"],
+        "level": "INFO",
+        "propagate": True,
+    }
 
 WAGTAIL_CODE_BLOCK_LANGUAGES = (
     ('cpp', 'C++'),

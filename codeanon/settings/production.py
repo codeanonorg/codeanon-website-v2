@@ -9,6 +9,9 @@ ALLOWED_HOSTS = [os.getenv("DJANGO_HOST", "127.0.0.1")]
 
 DEBUG = False
 
+if "AIRBRAKE_PROJECT_KEY" in os.environ:
+    AIRBRAKE["environment"] = "production"
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
