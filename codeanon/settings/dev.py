@@ -15,6 +15,8 @@ INSTALLED_APPS += ["debug_toolbar"]
 
 MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
+AIRBRAKE["environment"] = "development"
+
 try:
     from .local import *
 except ImportError:
