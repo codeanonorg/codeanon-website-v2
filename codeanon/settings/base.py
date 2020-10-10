@@ -176,7 +176,7 @@ BASE_URL = "http://codeanon.org"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {"console": {"class": "logging.StreamHandler", }, "airbrake": {"class": "pybrake.LoggingHandler"}},
+    "handlers": {"console": {"class": "logging.StreamHandler", }},
     "loggers": {
         "django": {
             "handlers": ["console"],
@@ -192,6 +192,7 @@ if "AIRBRAKE_PROJECT_KEY" in os.environ:
         "project_key": os.environ.get("AIRBRAKE_PROJECT_KEY"),
     }
     MIDDLEWARE.append("pybrake.django.AirbrakeMiddleware")
+    LOGGING["handlers"]["airbrake"] = {"class": "pybrake.LoggingHandler"}
     LOGGING["loggers"]["app"] = {
         "handlers": ["airbrake"],
         "level": "INFO",
