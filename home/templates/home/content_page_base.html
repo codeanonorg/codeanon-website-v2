@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailmath %}
 
 {% block content %}
     <section class="{% block header_class %}hero is-medium{% endblock %}" id="top">
@@ -16,4 +16,9 @@
             </div>
         {% endfor %}
     </section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% mathjax %}"></script>
+    <script src="{% static "wagtailmath/js/wagtailmath.public.js" %}"></script>
 {% endblock %}

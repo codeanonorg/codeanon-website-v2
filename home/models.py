@@ -12,6 +12,8 @@ from wagtail.core import fields, blocks
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
 
+from contrib.wagtailmath.blocks import MathjaxBlock
+
 
 class FormField(AbstractFormField):
     page = ParentalKey("home.EmailFormPage", related_name="form_fields")
@@ -61,6 +63,7 @@ class ContentPageBase(BasePage):
         [
             ("rich_text", blocks.RichTextBlock(template="home/blocks/rich_text.html")),
             ("raw_html", blocks.RawHTMLBlock()),
+            ("mathjax", MathjaxBlock()),
             ("trombinoscope", TrombinoscopeBlock()),
         ],
         blank=True,
