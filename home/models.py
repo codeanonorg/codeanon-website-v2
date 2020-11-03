@@ -9,8 +9,13 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.core import fields, blocks
+from wagtail.core.blocks import RawHTMLBlock
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
+from wagtail.embeds.blocks import EmbedBlock
+from wagtail.images.blocks import ImageChooserBlock
+
+from contrib.columns.blocks import ColumnBlock
 
 
 class FormField(AbstractFormField):
@@ -60,7 +65,10 @@ class ContentPageBase(BasePage):
     content = fields.StreamField(
         [
             ("rich_text", blocks.RichTextBlock(template="home/blocks/rich_text.html")),
-            ("raw_html", blocks.RawHTMLBlock()),
+            ("image", ImageChooserBlock()),
+            ("embed", EmbedBlock()),
+            ("raw_html", RawHTMLBlock()),
+            ("columns", ColumnBlock()),
             ("trombinoscope", TrombinoscopeBlock()),
         ],
         blank=True,
