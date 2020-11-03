@@ -1,0 +1,25 @@
+<p>Enter MathJax markup:</p>
+<textarea
+  name="{{ widget.name }}"
+  {% for name, value in widget.attrs.items %}{% if value is not False %} {{ name }}{% if value is not True %}="{{ value }}"{% endif %}{% endif %}{% endfor %}
+  id="{{ widget.attrs.id }}"
+  cols="50"
+  rows="5"
+  onkeyup="previews['{{widget.name}}'].update()"
+  style="margin-top:5px"
+>
+  {% if widget.value %}{{ widget.value }}{% endif %}
+</textarea>
+<p>Preview:</p>
+<div class="richtext" id="mathjax-preview-{{ widget.attrs.id }}"></div>
+<script>
+  if (!previews) {
+    var previews = {};
+  }
+  previews["{{widget.name}}"] = new Preview(
+      document.getElementById("mathjax-preview-{{ widget.attrs.id }}"),
+      document.getElementById("{{ widget.attrs.id }}"),
+  );
+
+  previews["{{widget.name}}"].update();
+</script>

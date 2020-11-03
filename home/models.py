@@ -17,6 +17,8 @@ from wagtail.images.blocks import ImageChooserBlock
 
 from contrib.columns.blocks import ColumnBlock
 
+from contrib.wagtailmath.blocks import MathjaxBlock
+
 
 class FormField(AbstractFormField):
     page = ParentalKey("home.EmailFormPage", related_name="form_fields")
@@ -69,6 +71,7 @@ class ContentPageBase(BasePage):
             ("embed", EmbedBlock()),
             ("raw_html", RawHTMLBlock()),
             ("columns", ColumnBlock()),
+            ("mathjax", MathjaxBlock()),
             ("trombinoscope", TrombinoscopeBlock()),
         ],
         blank=True,

@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "search",
     "blog",
     "contrib.columns",
+    "contrib.wagtailmath",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.routable_page",
@@ -177,7 +178,7 @@ BASE_URL = "http://codeanon.org"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {"console": {"class": "logging.StreamHandler", }},
+    "handlers": {"console": {"class": "logging.StreamHandler", "level": "DEBUG" }},
     "loggers": {
         "django": {
             "handlers": ["console"],
