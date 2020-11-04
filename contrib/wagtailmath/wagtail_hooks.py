@@ -5,24 +5,24 @@ from wagtail.core import hooks
 
 @hooks.register("register_rich_text_features")
 def register_mark_feature(features):
-    feature_name = "latex-inline"
-    type_ = "MARK"
+    tag = "latex-inline"
     control = {
-        "type": type_,
+        "type": tag,
         "label": "TeX",
         "description": "Inline LaTeX",
-        "style": {"font-family": "monospace"}
+        "element": "span",
+        "style": {"font-family": "monospace", "background-color": "#CCC"}
     }
 
     features.register_editor_plugin(
-        "draftail", feature_name, draftail_features.InlineStyleFeature(control)
+        "draftail", tag, draftail_features.InlineStyleFeature(control)
     )
 
     db_conversion = {
-        "from_database_format": {"span.mathjax": InlineStyleElementHandler(type_)},
-        "to_database_format": {"style_map": {type_: {"element": "span", "props": {"class": "mathjax"}}}},
+        "from_database_format": {"span[class=mathjax]": InlineStyleElementHandler(tag)},
+        "to_database_format": {"style_map": {tag: {"element": "span", "props": {"class": "mathjax"}}}},
     }
 
-    features.register_converter_rule("contentstate", feature_name, db_conversion)
+    features.register_converter_rule("contentstate", tag, db_conversion)
 
-    features.default_features.append(feature_name)
+    features.default_features.append(tag)

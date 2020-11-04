@@ -4,12 +4,17 @@ from modelcluster.fields import ParentalKey
 
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import RichTextField
-from wagtail.core.blocks import RichTextBlock
+from wagtail.core.blocks import RichTextBlock, RawHTMLBlock
 from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.admin.edit_handlers import StreamFieldPanel
+from wagtail.embeds.blocks import EmbedBlock
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail_pygments import blocks as pygments_blocks
 from wagtail.search import index
+
+from contrib.columns.blocks import ColumnBlock
+from contrib.wagtailmath.blocks import MathjaxBlock
 
 
 class CodeBlock(pygments_blocks.CodeBlock):
@@ -52,7 +57,12 @@ class BlogPage(Page):
     intro = models.CharField(max_length=250)
 
     content = StreamField([
-        ('rich_text', RichTextBlock()),
+        ("rich_text", RichTextBlock(template="home/blocks/rich_text.html")),
+        ("image", ImageChooserBlock()),
+        ("embed", EmbedBlock()),
+        ("raw_html", RawHTMLBlock()),
+        ("columns", ColumnBlock()),
+        ("mathjax", MathjaxBlock()),
         ('code', CodeBlock())
     ])
 
