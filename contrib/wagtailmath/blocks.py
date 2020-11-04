@@ -3,8 +3,11 @@ import logging
 from django.forms import Widget, CharField
 from django.template.loader import render_to_string
 from django.templatetags.static import static
+from django.utils.functional import lazy
 from django.utils.safestring import mark_safe
 from wagtail.core.blocks import FieldBlock
+
+static_lazy = lazy(static, str)
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +16,7 @@ class MathJaxWidget(Widget):
     class Media:
         js = (
             "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js",
-            static("wagtailmath/js/wagtailmath.js")
+            static_lazy("wagtailmath/js/wagtailmath.js")
         )
 
     template_name = "wagtailmath/mathjax_widget.html"
