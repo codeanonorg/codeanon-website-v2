@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags wagtailmath %}
+{% load static wagtailcore_tags %}
 
 {% block content %}
     <section class="{% block header_class %}hero is-medium{% endblock %}" id="top">
@@ -19,6 +19,6 @@
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{% mathjax %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script src="{% static "wagtailmath/js/wagtailmath.public.js" %}"></script>
 {% endblock %}

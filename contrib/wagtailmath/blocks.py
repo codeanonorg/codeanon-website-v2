@@ -1,6 +1,6 @@
 import logging
 
-from django.forms import Widget, CharField
+from django.forms import Widget, CharField, forms
 from django.template.loader import render_to_string
 from django.templatetags.static import static
 from django.utils.functional import lazy
@@ -42,6 +42,12 @@ class MathjaxBlock(FieldBlock):
     class Meta:
         template = "wagtailmath/mathjax_block.html"
         name = "MathJax equation"
+
+    class Media:
+        js = (
+            "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js",
+            static_lazy("wagtailmath/js/wagtailmath.public.js"),
+        )
 
     def __init__(self, required=True, help_text=None, **kwargs):
         self.field = CharField(required=required, help_text=help_text, widget=MathJaxWidget())
