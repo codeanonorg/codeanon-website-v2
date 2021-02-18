@@ -9,7 +9,7 @@ COPY ./package.json /code
 
 RUN yarn --frozen-lockfile
 
-FROM python:3.8-alpine as builder
+FROM python:3.9-alpine as builder
 ARG ENV
 ENV DJANGO_ENV ${ENV}
 WORKDIR /code/
@@ -50,7 +50,7 @@ RUN echo ${ENV}; [ "x${DJANGO_ENV}" = "xdev" ] \
 	|| poetry export -f requirements.txt  > requirements.txt
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /wheels -r requirements.txt
 
-FROM python:3.8-alpine as runner
+FROM python:3.9-alpine as runner
 LABEL maintainer="solarliner@gmail.com"
 
 # Set environment varibles
@@ -65,7 +65,7 @@ RUN apk update && apk add --no-cache libpq jpeg zlib tiff tk tcl openjpeg libsas
 COPY . /code/
 COPY --from=node /code/node_modules /code/node_modules
 COPY --from=builder /wheels /wheels
-RUN pip install --no-cache /wheels/*
+RUN pip install --no-cache --no-deps --no-index /wheels/*
 RUN rm -rf /wheels
 
 RUN SECRET_KEY="tempkey" sh -c "\
