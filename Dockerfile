@@ -37,6 +37,8 @@ RUN apk update && apk --no-cache add python3 \
 	tcl-dev \
 	harfbuzz-dev \
 	fribidi-dev \
+	# cryptography dependencies
+	cargo \
 	# Postgres dependencies
 	postgresql-dev
 # Install any needed packages specified by Poetry
