@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7,^3.8"
 django = "^2.2"
-wagtail = "^2.7"
+wagtail = "^2.12"
 django-crispy-forms = "^1.7"
 django-crispy-bulma = "~0.2"
 django-compressor = "^2.4"
