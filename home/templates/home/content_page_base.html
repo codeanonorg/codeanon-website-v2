@@ -2,23 +2,23 @@
 {% load static wagtailcore_tags %}
 
 {% block content %}
-    <section class="{% block header_class %}hero is-medium{% endblock %}" id="top">
-        {% block header_pre %}{% endblock %}
-        <main class="hero-body">
-            {% block header_title %}{% endblock %}
-        </main>
-        {% block header_post %}{% endblock %}
-    </section>
-    <section id="main" class="section">
-        <div class="container">
-            {% for block in self.content %}
-                {% include_block block %}
-            {% endfor %}
-        </div>
-    </section>
+<section class="{% block header_class %}hero is-small{% endblock %}" id="top">
+    {% block header_pre %}{% endblock %}
+    <main class="hero-body">
+        {% block header_title %}{% endblock %}
+    </main>
+    {% block header_post %}{% endblock %}
+</section>
+<section id="main" class="section">
+    <div class="container">
+        {% for block in self.content %}
+        {% include_block block %}
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
 
 {% block extra_js %}
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script src="{% static "wagtailmath/js/wagtailmath.public.js" %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="{% static " wagtailmath/js/wagtailmath.public.js" %}"></script>
 {% endblock %}

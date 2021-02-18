@@ -3,54 +3,55 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-  <section class="hero is-bold" id="top">
-    <main class="hero-body">
-      <div class="container">
-        <h1 class="title">{% firstof title page.title %}</h1>
-      </div>
-    </main>
-  </section>
-    <section class="section">
-        <div class="container">
-            {{ self.intro | richtext }}
-        </div>
-    </section>
-  <section class="section">
-    {% for block in self.content %}
-      <div class="container content">
-        {% include_block block %}
-      </div>
-    {% endfor %}
-  </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-multiline">
-                {% for article in articles %}
-                    <div class="column is-4-desktop is-6-tablet">
-                        <div class="box">
-                            <article class="media">
-                                {% if article.image %}
-                                <div class="media-left">
-                                    <figure class="image is-4by1">
-                                        {% image article.banner_image fill-1200x300 %}
-                                    </figure>
-                                </div>
-                                {% endif %}
-                                <div class="media-content">
-                                    <div class="content">
-                                        <span class="title"><a href="{{ article.url }}">{{ article.title }}</a></span><br/>
-                                        <div class="level">
-                                            <div class="level-left"><strong>{% firstof article.get_full_name article.owner.username %}</strong></div>
-                                            <div class="level-right"><small>le {{ article.first_published_at | date }}</small></div>
-                                        </div>
-                                        {{ article.intro|richtext }}
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                {% endfor %}
+<section class="hero is-bold" id="top">
+  <main class="hero-body">
+    <div class="container content-width">
+      <h1 class="title">{% firstof title page.title %}</h1>
+    </div>
+  </main>
+</section>
+<section class="section">
+  <div class="container">
+    {{ self.intro | richtext }}
+  </div>
+</section>
+<section class="section">
+  {% for block in self.content %}
+  <div class="container content">
+    {% include_block block %}
+  </div>
+  {% endfor %}
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for article in articles %}
+      <div class="column is-4-desktop is-6-tablet">
+        <div class="box">
+          <article class="media">
+            {% if article.image %}
+            <div class="media-left">
+              <figure class="image is-4by1">
+                {% image article.banner_image fill-1200x300 %}
+              </figure>
             </div>
+            {% endif %}
+            <div class="media-content">
+              <div class="content">
+                <span class="title"><a href="{{ article.url }}">{{ article.title }}</a></span><br />
+                <div class="level">
+                  <div class="level-left"><strong>{% firstof article.get_full_name article.owner.username %}</strong>
+                  </div>
+                  <div class="level-right"><small>le {{ article.first_published_at | date }}</small></div>
+                </div>
+                {{ article.intro|richtext }}
+              </div>
+            </div>
+          </article>
         </div>
-    </section>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}
