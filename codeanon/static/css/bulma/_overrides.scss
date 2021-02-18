@@ -420,3 +420,14 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
+
+.article {
+  h1, h2, h3, h4, h5, h6 {
+    color: $scheme-main;
+  }
+  color: $scheme-main;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.514);
+  margin: 2rem;
+}
