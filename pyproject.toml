@@ -20,6 +20,7 @@ psycopg2-binary = "^2.8"
 whitenoise = "^5.0.1"
 wagtail_pygments = "^0.1.1"
 pybrake = "^0.4.6"
+django-health-check = "^3.16.4"
 
 [tool.poetry.dev-dependencies]
 django-debug-toolbar = "~2.1"

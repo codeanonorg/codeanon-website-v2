@@ -11,6 +11,7 @@ from . import views
 from .views import LoginView
 
 urlpatterns = [
+    url(r"^healthcheck/", include('health_check.urls')),
     url(r"^django-admin/", admin.site.urls),
     url(r"^admin/", include(wagtailadmin_urls)),
     url(r"^documents/", include(wagtaildocs_urls)),

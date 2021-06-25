@@ -76,4 +76,5 @@ RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
 EXPOSE ${PORT}
+HEALTHCHECK CMD curl --fail -H "Accept: application/json" localhost:${PORT}/healthcheck
 CMD ./docker_entry.sh gunicorn codeanon.wsgi:application --workers=3 --bind=0.0.0.0:$PORT

@@ -9,6 +9,8 @@ services:
       args:
         PORT: ${PORT:-8080}
         ENV: ${ENV:-dev}
+    volumes:
+    - .:/code
     environment:
       PORT: ${PORT:-8080}
       DATABASE_URL: postgres://codeanon:codeanon@db/codeanon
