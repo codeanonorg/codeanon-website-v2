@@ -76,5 +76,6 @@ RUN adduser -S wagtail && chown -R wagtail /code
 USER wagtail
 
 EXPOSE ${PORT}
-HEALTHCHECK CMD curl --fail -H "Accept: application/json" localhost:${PORT}/healthcheck
+HEALTHCHECK --interval=30s --timeout=3s --retries=3\
+    CMD wget -nv --header="Accept: application/json" -t1 "http://$DJANGO_HOST:$PORT/healthcheck" -O- || exit 1
 CMD ./docker_entry.sh gunicorn codeanon.wsgi:application --workers=3 --bind=0.0.0.0:$PORT
