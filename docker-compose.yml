@@ -9,6 +9,7 @@ services:
       args:
         PORT: ${PORT:-8080}
         ENV: ${ENV:-dev}
+    command: python manage.py runserver 0.0.0.0:${PORT:-8080}
     volumes:
     - .:/code
     environment:
