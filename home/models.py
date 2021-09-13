@@ -1,4 +1,7 @@
+from typing import Union, Any
+
 from django.db import models
+from django.http import HttpRequest
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -49,10 +52,30 @@ class BasePage(Page):
     class Meta:
         abstract = True
 
-    def get_context(self, request, *args, **kwargs):
+    def get_context(self, request: HttpRequest, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+        context["og"] = BasePage.flatten_object(self.get_opengraph(request))
         context["menu"] = self.get_root().get_children().first().get_children().filter(live=True, show_in_menus=True)
         return context
+
+    def get_opengraph(self, request: HttpRequest):
+        # noinspection PyArgumentList
+        return {
+            "title": self.seo_title or self.title,
+            "type": "website",
+            "url": self.get_full_url(request),
+            "locale": "fr_FR",
+            "site_name": self.get_site().site_name,
+        }
+
+    @staticmethod
+    def flatten_object(obj: Any, sep=":", prefix=""):
+        if prefix != "":
+            prefix = f"prefix{sep}"
+        return {
+            f"{prefix}{key}": {value}
+            for key, value in dict(obj).items()
+        }
 
 
 class ContentPageBase(BasePage):

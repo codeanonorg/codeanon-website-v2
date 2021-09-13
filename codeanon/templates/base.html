@@ -27,6 +27,11 @@
     {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
     {% endblock %}
+    {% if og %}
+        {% for key, value in og.items %}
+        <meta name="og:{{ key }}" content="{{ value }}" />
+        {% endfor %}
+    {% endif %}
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
