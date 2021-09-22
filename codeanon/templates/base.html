@@ -58,6 +58,8 @@
 {% endblock %}
 {# Global javascript #}
 <script type="text/javascript" src="{% static 'js/codeanon.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="{% static "wagtailmath/js/wagtailmath.public.js" %}"></script>
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 {% endblock %}

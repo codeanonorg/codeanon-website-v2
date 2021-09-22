@@ -1,11 +1,11 @@
 import logging
 
-from django.forms import Widget, CharField, forms
-from django.template.loader import render_to_string
+from django.forms import Widget, CharField
 from django.templatetags.static import static
 from django.utils.functional import lazy
-from django.utils.safestring import mark_safe
 from wagtail.core.blocks import FieldBlock
+from wagtail.core.telepath import register
+from wagtail.core.widget_adapters import WidgetAdapter
 
 static_lazy = lazy(static, str)
 
@@ -16,7 +16,6 @@ class MathJaxWidget(Widget):
     class Media:
         js = (
             "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js",
-            static_lazy("wagtailmath/js/wagtailmath.js")
         )
 
     template_name = "wagtailmath/mathjax_widget.html"
@@ -33,9 +32,18 @@ class MathJaxWidget(Widget):
             }
         }
 
-    def render(self, name, value, attrs=None, renderer=None):
-        context = self.get_context(name, value, attrs)
-        return mark_safe(render_to_string(self.template_name, context))
+
+class MathJaxAdapter(WidgetAdapter):
+    js_constructor = "contrib.wagtailmath.blocks.MathJaxWidget"
+
+    def js_args(self, _: MathJaxWidget):
+        return []
+
+    class Media:
+        js = [static_lazy("wagtailmath/js/wagtailmath.js")]
+
+
+register(MathJaxAdapter(), MathJaxWidget)
 
 
 class MathjaxBlock(FieldBlock):
